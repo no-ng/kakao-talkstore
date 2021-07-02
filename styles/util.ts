@@ -1,3 +1,4 @@
+export const headerHeight = 44;
 export const screen_out = `
   position: absolute;
   width: 0;

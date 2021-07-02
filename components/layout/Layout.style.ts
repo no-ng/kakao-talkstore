@@ -1,7 +1,7 @@
-import Link from 'next/link';
 import styled from 'styled-components';
+import { headerHeight } from '../../styles/util';
 
-const _Header = styled.header`
+export const _Header = styled.header`
   position: fixed;
   top: 0;
   left: 0;
@@ -60,31 +60,38 @@ const _Header = styled.header`
   }
 `;
 
-export const Header = () => (
-  <_Header>
-    <div>
-      <h1 className="screen_out">톡스토어</h1>
-      <Link href="/">
-        <a>
-          <h2 className="logo_txt">
-            <img
-              className="logo_img"
-              src="https://st.kakaocdn.net/commerce_ui/front-ui/real/20210625/100049/assets/images/m640/logo_talkshopping_171207.png"
-              alt="톡쇼핑하기"
-            />
-          </h2>
-        </a>
-      </Link>
-    </div>
-    <div className="menu">
-      <a href="#none" className="menu_link">
-        <span className="ico_store ico_menu">카테고리 메뉴</span>
-      </a>
-    </div>
-    <div className="search">
-      <a href="#none" className="search_link">
-        <span className="ico_store ico_search">검색</span>
-      </a>
-    </div>
-  </_Header>
-);
+export const _Nav = styled.nav`
+  position: fixed;
+  top: ${headerHeight}px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+  width: 100%;
+
+  ul {
+    display: table;
+    table-layout: fixed;
+    text-align: center;
+    width: 100%;
+    min-width: 320px;
+    max-width: 750px;
+    margin: auto;
+
+    li {
+      display: table-cell;
+      white-space: nowrap;
+    }
+
+    .link_tab {
+      height: ${headerHeight}px;
+      line-height: ${headerHeight}px;
+      font-weight: 400;
+      font-size: 16px;
+      letter-spacing: -0.5px;
+      text-align: center;
+    }
+  }
+`;
+
+export const _Main = styled.main<{ useNav: boolean }>`
+  padding-top: ${({ useNav }) => headerHeight + (useNav ? headerHeight : 0)}px;
+`;
