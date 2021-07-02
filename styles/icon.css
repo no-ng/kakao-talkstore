@@ -1,0 +1,23 @@
+.ico_store {
+  background: url(ico_store.svg) no-repeat 0 0;
+  background-size: 385px 610px;
+}
+.ico_store,
+.ico_store2 {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  text-indent: -9999px;
+}
+.ico_menu {
+  width: 18px;
+  height: 16px;
+  margin-top: 15px;
+  background-position: 0 0;
+}
+.ico_search {
+  width: 18px;
+  height: 18px;
+  margin-top: 14px;
+  background-position: -40px 0;
+}

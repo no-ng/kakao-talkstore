@@ -1,7 +1,4 @@
-@import url(./reset.css);
-@import url(./icon.css);
-
-.screen_out {
+export const screen_out = `
   position: absolute;
   width: 0;
   height: 0;
@@ -9,4 +6,4 @@
   overflow: hidden;
   line-height: 0;
   text-indent: -9999px;
-}
+`;
