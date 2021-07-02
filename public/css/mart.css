@@ -1,0 +1,397 @@
+@charset "utf-8";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 아이콘 */
+.ico_layermart{display:inline-block;overflow:hidden;font-size:1px;line-height:0;color:transparent;background:url(../images/m640/ico_layermart.png) no-repeat 0 0;background-size:230px 170px;vertical-align:top}
+.shop_detail .bg_squircle:after, .layer_deal .bg_squircle:after{position:absolute;left:-1px;right:-1px;top:-1px;bottom:-1px;background:url(../images/m640/bg_squircle_detail.svg) no-repeat;background-size:195px 200px;content:''} /* 2020-05-15 추가 */
+
+/* 레이아웃 */
+.wrap_mart .k_content{padding-top:0}
+.wrap_mart .panel_main{margin-top:-1px;padding-top:44px}
+.wrap_mart .wrap_tab_store{position:fixed;left:0;right:0;top:0;z-index:2005;width:100%;border-bottom:1px solid rgba(0,0,0,0.08);background-color:#fff;-webkit-background-clip:padding-box;background-clip:padding-box}
+.wrap_mart .tab_store li{float:left;width:50%}
+.wrap_mart .tab_store .link_tab{display:block;height:44px;font-weight:normal;font-size:16px;line-height:44px;color:#000;letter-spacing:-0.5px;text-align:center}
+.wrap_mart .tab_store .txt_tab{display:block;position:relative;vertical-align:top}
+.wrap_mart .tab_store .link_tab[aria-selected="true"] .txt_tab:after{position:absolute;bottom:-1px;left:0;right:0;height:2px;background-color:#000;content:''}
+.wrap_mart .tab_store .txt_tab .ico_new{display:inline-block;overflow:hidden;width:4px;height:4px;margin:12px 0 0 3px;border-radius:4px;font-size:1px;line-height:0;color:transparent;background-color:#fc5252;vertical-align:top}
+/* .wrap_mart .bunch_deal{padding-bottom:10px} *//* 2020-09-10 삭제 */
+.wrap_mart .bunch_store{padding-bottom:40px}
+.wrap_mart .bunch_hot{padding-bottom:28px}
+.wrap_mart .bunch_store:before{display:block;height:9px;background:url(../images/m640/bg_divide.png) 0 0 repeat-x;background-size:1px 9px;content:''}
+.wrap_mart .bunch_bestrank:before{display:none}
+.wrap_mart .tab_bestrank{overflow:hidden;margin:0 18px 20px;background-color:#f9f9f9}
+.wrap_mart .tab_bestrank li{float:left;position:relative;width:50%}
+.wrap_mart .tab_bestrank li+li:before{position:absolute;left:0;top:14px;width:1px;height:15px;background-color:rgba(0,0,0,.08);content:''}
+.wrap_mart .tab_bestrank .link_tab{display:block;height:45px;color:rgba(51,51,51,.36);line-height:43px;letter-spacing:-0.025em;text-align:center}
+.wrap_mart .tab_bestrank .link_tab[aria-selected="true"]{color:#222}
+.wrap_mart .bunch_store .emph_g{color:#24c08f}
+.wrap_mart .bunch_store .tit_sub{display:block;padding:40px 18px 15px;font-size:20px;line-height:24px;color:#222;letter-spacing:-0.025em}
+.wrap_mart .bunch_store .wrap_tit{position:relative;padding:0 18px}
+.wrap_mart .bunch_store .wrap_tit .tit_sub{padding:30px 0 15px}
+.wrap_mart .bunch_store .include_info{overflow:visible;padding-right:37px}/* 2020-01-29-v2 수정 */
+.wrap_mart .bunch_store .include_info:after{display:block;clear:both;content:''}/* 2020-01-29-v2 추가 */
+.wrap_mart .bunch_store .include_info .tit_sub{position:relative;z-index:10}
+.wrap_mart .info_tip{position:absolute;right:18px;bottom:18px;left:18px}
+.wrap_mart .info_tip .link_info{float:right}
+/* .wrap_mart .info_tip .link_info .ico_info{display:block;width:19px;height:19px;background-position:-320px -45px} *//* 2020-09-10 삭제 */
+.wrap_mart .info_tip .layer_tip{display:none;position:absolute;right:-1px;top:34px;z-index:20;max-width:280px;padding:15px 17px;border:1px solid #d5d5d5;border-radius:4px;color:#8c8c8c;line-height:20px;letter-spacing:-0.02em;background-color:#fff;text-align:right;box-sizing:border-box}
+.wrap_mart .info_tip .layer_tip .ico_tooltip{position:absolute;right:-1px;top:-9px;width:18px;height:13px;background-position:-275px -15px}
+.wrap_mart .info_tip .layer_tip .emph_tip{color:#222}
+.wrap_mart .info_tip.tip_on .link_info .ico_info{background-position:-320px -65px}
+.wrap_mart .info_tip.tip_on .layer_tip{display:block}
+.wrap_mart .bunch_bestrank .info_tip .layer_tip{width:231px;padding-left:10px}
+.wrap_mart .link_viewall{display:block;height:44px;margin:25px 18px 0;border:1px solid #efefef;border-radius:3px;line-height:44px;letter-spacing:-0.03em;text-align:center}
+.wrap_mart .link_viewall .ico_store{vertical-align:top}
+.wrap_mart .link_viewall .ico_more{width:11px;height:6px;margin:20px 0 0 9px;background-position:-305px -45px}
+.wrap_mart .box_addfriend{position:relative;padding:29px 103px 25px 20px;margin-bottom:-40px}
+.wrap_mart .box_addfriend .txt_addfriend{display:block;font-weight:bold;font-size:17px;color:#222;line-height:22px;letter-spacing:-0.03em}
+.wrap_mart .box_addfriend .link_addfriend{display:inline-block;height:36px;margin-top:8px;padding:0 15px;border-radius:25px;color:#000;line-height:36px;background-color:#ffeb00;vertical-align:top}
+.wrap_mart .box_addfriend .link_addfriend .ico_store{width:24px;height:17px;margin:10px 4px 0 0;vertical-align:top}
+.wrap_mart .box_addfriend .link_addfriend .ico_addfriend{background-position:-220px -435px}
+.wrap_mart .box_addfriend .link_addfriend .ico_home{background-position:-245px -435px}
+.wrap_mart .box_addfriend .img_addfriend{position:absolute;right:19px;top:22px;width:85px}
+.wrap_mart .foot_link{font-size:0} /* 2021-04-26 추가 */
+/* 2021-04-28_v6 삭제 시작
+.wrap_mart .bunch_store .link_info{display:inline-block;width:50%;height:50px;margin-bottom:-40px;font-size:14px;color:#333;line-height:50px;letter-spacing:-0.033em;text-align:center;vertical-align:top}
+.wrap_mart .bunch_store .link_info:last-child{position:relative;}
+.wrap_mart .bunch_store .link_info:last-child:before{position:absolute;left:0;top:17px;width:1px;height:15px;background-color:#e9e9e9;content:''}
+// 2021-04-28_v6 삭제 끝 */
+/* 2021-04-28_v6 추가 시작 */
+.wrap_mart .foot_link .link_info{display:inline-block;width:50%;height:50px;margin-bottom:-40px;font-size:14px;color:#333;line-height:50px;letter-spacing:-0.033em;text-align:center;vertical-align:top}
+.wrap_mart .foot_link .link_info:last-child{position:relative;}
+.wrap_mart .foot_link .link_info:last-child:before{position:absolute;left:0;top:17px;width:1px;height:15px;background-color:#e9e9e9;content:''}
+/* // 2021-04-28_v6 추가 끝 */
+/* .wrap_mart .bunch_store .link_info .ico_mart{width:13px;height:16px;margin:18px 7px 0 0;background-position:-320px -85px;vertical-align:top} // 2021-04-26 삭제 */
+
+/* 푸드톡딜 상단영역 */
+.wrap_mart .bunch_intro{padding-bottom:2px}
+/* 2020-02-19 수정 시작 */
+.wrap_mart .bunch_intro .intro_shortcut{position:relative}
+.wrap_mart .bunch_intro .link_shortcut{display:block;height:25px;padding:10px 0 7px 18px;font-size:13px;line-height:25px;color:#767676;letter-spacing:-0.04em}
+/* 2020-02-19 수정 끝 */
+.wrap_mart .bunch_intro .intro_history{padding-right:85px} /* 2020-02-19 추가 */
+.wrap_mart .bunch_intro .link_shortcut .emph_shortcut{color:#000}
+.wrap_mart .bunch_intro .link_shortcut .ico_x{width:8px;height:9px;margin:8px 3px 0 4px;background-position:-340px -45px}
+.wrap_mart .bunch_intro .link_shortcut .ico_arr{width:5px;height:8px;margin:8px 0 0 6px;background-position:-345px 0}
+.wrap_mart .bunch_intro .link_mypage{position:absolute;right:18px;top:9px;height:23px;padding:0 10px;border:1px solid #000;border-radius:23px;font-size:12px;line-height:23px;color:#222}
+.wrap_mart .bunch_intro .link_mypage .ico_my{width:10px;height:11px;margin:6px 2px 0 0;background-position:-330px 0}
+.wrap_mart .bunch_intro .link_bnr{display:block;overflow:hidden;position:relative;height:134px;background-color:#24c08f}
+/* 2020-02-19 수정 시작 */
+.wrap_mart .bunch_intro .link_bnr .txt_mart{display:block;overflow:hidden;position:relative;z-index:1;width:204px;height:67px;margin:33px 0 0 31px;font-size:1px;line-height:0;color:transparent;background:url(../images/m640/txt_bnrmart.png) no-repeat 0 0;background-size:204px 67px}
+.wrap_mart .bunch_intro .link_bnr .img_mart{position:absolute;right:0;top:0;width:152px;height:134px;background:url(../images/m640/img_bnrmart.png) no-repeat 0 0;background-size:152px 134px}
+/* 2020-02-19 수정 끝 */
+
+/* 2020-10-14_v3 추가 시작 */
+.wrap_mart .bunch_intro_v2{padding-bottom:0}
+.wrap_mart .bunch_intro_v2 .link_bnr{height:107px;border-top:1px solid #ececec;background-color:#fff}
+.wrap_mart .bunch_intro_v2 .link_bnr .txt_mart{width:186px;height:53px;margin:27px 0 0 18px;background-image:url(../images/m640/txt_bnrmart_201014.png);background-size:186px 53px}
+.wrap_mart .bunch_intro_v2 .link_bnr .img_mart{right:12px;top:7px;width:100px;height:100px;background-image:url(../images/m640/img_bnrmart_201014.png);background-size:100px 100px}
+/* //2020-10-14_v3 추가 끝 */
+/* 톡딜 카드 */
+.wrap_mart .card_talkdeal{margin:0;padding:0;border:0;border-radius:0}/* 2020-08-13 수정 *//* 2020-08-19 수정 */
+.wrap_mart .card_talkdeal .link_card{overflow:hidden} /* 2021-01-07_v2  수정 */
+/* .wrap_mart .card_talkdeal .thumb_card{display:block;position:relative;height:0;padding-bottom:72.466%} 2021-01-07_v2  삭제 */
+.wrap_mart .card_special{margin-bottom:15px}/* 2020-10-14_v3 추가 */
+.wrap_mart .card_talkdeal.card_special .thumb_card{padding-bottom:100%;border-radius:0} /* 2021-05-21 수정 */
+.wrap_mart .card_talkdeal .thumb_card{padding-bottom:56.114%;border-radius:0} /* 2021-05-21 수정 */
+.wrap_mart .card_talkdeal .thumb_card:before{position:absolute;left:0;right:0;top:0;bottom:0;background-color:rgba(0,0,0,.03);content:''}
+.wrap_mart .close_talkdeal .thumb_card:before{background-color:rgba(241,241,241,.4)} /* 2020-03-23 수정 */
+.wrap_mart .card_talkdeal .info_badge{position:absolute;left:17px;top:15px}
+.wrap_mart .card_talkdeal .badge_card{float:left;height:24px;padding:0 7px;border-radius:3px;font-size:11px;color:#111;line-height:25px;background-color:#ffe73e}
+.wrap_mart .card_talkdeal .badge_card .time_deal{display:inline-block;font-size:12px;line-height:24px;vertical-align:top}
+.wrap_mart .card_talkdeal .badge_impend{color:#fff;background-color:#ff5451}
+.wrap_mart .card_talkdeal .badge_end{color:#fff;background-color:rgba(68,68,68,.9)}
+.wrap_mart .card_talkdeal .badge_ing{color:#fff;background-color:rgba(0,0,0,.4)}
+.wrap_mart .card_talkdeal .badge_talkdeal{color:#fff;background-color:#24c08f}
+.wrap_mart .card_talkdeal .badge_card+.badge_card{margin-left:3px}
+.wrap_mart .card_talkdeal .badge_coupon{padding:0;background-color:transparent}/* 2021-03-16-v2 추가 */
+.wrap_mart .card_talkdeal .badge_coupon + .badge_card{margin-left:4px}/* 2021-03-16-v2 추가 */
+.wrap_mart .card_talkdeal .info_card{display:block;min-height:70px;margin:16px 17px 0}
+/* .wrap_mart .card_talkdeal .name_product{display:block;font-size:18px;line-height:23px;color:#222;letter-spacing:-0.03em} *//* 2020-09-10 삭제 */
+.wrap_mart .card_talkdeal .detail_product{position:relative;margin-top:7px;color:#b9b9b9}/* 2020-09-07 수정 */
+/* .wrap_mart .card_talkdeal .delivery_free{padding-right:50px} 2020-08-13 제거 */
+.wrap_mart .card_talkdeal .area_btn{bottom:15px}/* 2020-08-13 추가 */
+/* .wrap_mart .card_talkdeal .detail_sub{height:auto} 2020-08-13 제거 */
+/* .wrap_mart .card_talkdeal .price_talkdeal{float:left;font-size:15px;color:#000} 2020-09-10 삭제 */
+/* .wrap_mart .card_talkdeal .price_talkdeal .txt_price{display:inline-block;font-size:16px;vertical-align:top} 2020-09-10 삭제 */
+/* .wrap_mart .card_talkdeal .price_regular{float:left;margin-left:6px} 2020-09-10 삭제 */
+.wrap_mart .card_talkdeal .price_regular:only-child{margin-left:0}
+.wrap_mart .card_talkdeal .price_regular .txt_price{display:inline-block;font-size:15px;vertical-align:top}
+/* .wrap_mart .card_talkdeal .price_delivery{position:absolute;right:0;top:2px;line-height:16px;color:#24c08f} 2020-08-13 제거 */
+.wrap_mart .card_talkdeal .price_delivery .ico_store{width:16px;height:13px;margin:2px 2px 0 0;background-position:-325px -15px}
+.wrap_mart .card_talkdeal .txt_sub{display:block;font-size:15px;color:#000;letter-spacing:-0.03em}
+.wrap_mart .card_talkdeal .benefit_card{height:22px;padding:3px 75px 38px 17px;border-top:0} /* 2020-09-07 수정 */
+.wrap_mart .card_talkdeal .about_benefit{float:left;line-height:22px;letter-spacing:-0.03em}/* 2020-08-13 수정 */
+.wrap_mart .card_talkdeal .about_benefit .ico_talkdeal{width:14px;height:14px;margin:4px 3px 0 0;background-position:-330px -30px}
+.wrap_mart .card_talkdeal .about_benefit .txt_ing{float:left;color:#24c08f}
+.wrap_mart .card_talkdeal .about_benefit .num_ing{letter-spacing:0}
+.wrap_mart .card_talkdeal .about_benefit .txt_success{float:left;position:relative;padding-left:14px;color:#999}
+.wrap_mart .card_talkdeal .about_benefit .txt_success:before{position:absolute;left:7px;top:7px;width:1px;height:8px;background-color:rgba(151,151,151,.29);content:''}
+.os_android .wrap_mart .card_talkdeal .about_benefit .txt_success:before{top:6px}
+.wrap_mart .card_talkdeal .about_benefit .txt_direct{display:block;color:#ff5252}
+/* .wrap_mart .card_talkdeal .about_player{position:relative} 2020-09-10 삭제 */
+.wrap_mart .card_talkdeal .thumb_player{position:absolute;left:0;top:0;width:22px;height:22px;-webkit-mask-box-image:url(../images/m640/bg_mask.svg);-webkit-transition:transform 0.25s linear;transition:transform 0.25s linear}
+/* .wrap_mart .card_talkdeal .thumb_player:first-child{-webkit-transform:translateX(0);transform:translateX(0)} 2020-09-10 삭제 */
+/* .wrap_mart .card_talkdeal .thumb_player:nth-child(2){-webkit-transform:translateX(20px);transform:translateX(20px)} 2020-08-13 제거*/
+/* .wrap_mart .card_talkdeal .thumb_player:nth-child(3){-webkit-transform:translateX(40px);transform:translateX(40px)} 2020-08-13 제거*/
+/* .wrap_mart .card_talkdeal .thumb_player:last-child{-webkit-transform:translateX(20px);transform:translateX(20px)} 2020-09-10 삭제 */
+.wrap_mart .card_talkdeal .thumb_player .bg_squircle{width:100%;height:100%;background-size:100%}
+.wrap_mart .card_talkdeal .thumb_player .bg_squircle:after{background-position:-115px 0}
+/* 2020-03-23 추가 시작 */
+.wrap_mart .close_talkdeal .info_badge{left:50%;top:50%;margin:-44px 0 0 -44px;width:88px;height:88px} 
+.wrap_mart .close_talkdeal .badge_end{width:100%;height:100%;padding:0;border-radius:100%;font-weight:bold;font-size:15px;line-height:88px;letter-spacing:-0.033em;text-align:center}
+/* 2020-03-23 추가 끝 */
+
+/* 상품 컴포넌트 */
+
+/* A~B타입 및 공통 */
+.wrap_mart .list_product{background-color:#fff}
+.wrap_mart .list_product ul{overflow:hidden;padding:20px 13px 0 12px}
+.wrap_mart .list_product li{float:left;width:50%;padding-bottom:29px}
+.wrap_mart .list_product li:nth-of-type(odd){clear:both}
+.wrap_mart .list_product .cont_item{padding:0 5px 0 6px}
+.wrap_mart .cont_item .wrap_thumb{overflow:hidden;position:relative;border-radius:5px;background-color:#f4f4f4}
+.wrap_mart .cont_item .link_thumb{display:block;position:relative;height:0;padding-bottom:100%}
+.wrap_mart .cont_item .link_thumb:before, .wrap_mart .cont_item .thumb_item:after{position:absolute;left:0;right:0;top:0;bottom:0;border-radius:5px;background-color:rgba(0,0,0,0.03);content:''}
+.wrap_mart .cont_dimmed .link_thumb:before{display:none}
+.wrap_mart .cont_item .thumb_g{display:block;width:100%;height:auto;border-radius:5px}
+.wrap_mart .cont_item .emph_g{color:#ff5252}
+.wrap_mart .cont_item .info_badge{overflow:hidden;position:absolute;left:5px;bottom:5px}
+.wrap_mart .cont_item .info_badge > [class^="txt_"]{overflow:hidden;height:18px;padding:0 5px;border-radius:3px;font-size:11px;line-height:18px;color:#fff}
+.wrap_mart .cont_item .txt_viral{overflow:hidden;float:left;max-width:95px;height:21px;padding:0px 5px;font-size:11px;color:#fff;line-height:23px;background-color:rgba(0,0,0,0.4);white-space:nowrap;text-overflow:ellipsis;word-break:break-all}
+.wrap_mart .cont_item .txt_viral .ico_viral{float:left;width:13px;height:10px;margin-top:4px;background-position:-40px -20px}
+.wrap_mart .cont_item .txt_viral .txt_num{margin-left:3px}
+.os_android .wrap_mart .cont_item .info_badge .txt_num{line-height:19px}
+.os_android .wrap_mart .cont_item .info_badge .txt_talkdeal{line-height:19px}
+.wrap_mart .cont_item .info_badge .txt_talkdeal{float:left;background-color:#24c08f}
+.wrap_mart .cont_item .txt_talkdeal .ico_talkdeal{float:left;width:12px;height:12px;margin:3px 2px 0 -1px;background-position:-210px -90px}
+.wrap_mart .cont_item .info_badge .txt_impend{float:left;background-color:#ff5451}
+.wrap_mart .cont_item .btn_del{display:block;position:absolute;right:0;top:0;z-index:10;width:21px;height:21px;background-position:-115px -275px}
+.wrap_mart .cont_item .item_info .tit_item, .wrap_mart .cont_item .tit_review, .wrap_mart .cont_item .item_info .txt_price,
+.wrap_mart .cont_item .link_item .txt_item, .wrap_mart .cont_item .link_item .txt_brand,
+.wrap_mart .cont_item .link_item .emph_viral, .wrap_mart .cont_item .link_item .txt_price{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;word-break:break-all}
+.wrap_mart .cont_item .item_info{overflow:hidden;padding:10px 0 8px}
+.wrap_mart .cont_item .item_info .link_store{float:left;overflow:hidden;position:relative;width:30px;height:30px;border-radius:30px}
+.wrap_mart .cont_item .item_info .link_store:after{position:absolute;left:0;right:0;top:0;bottom:0;border:1px solid rgba(0,0,0,0.05);border-radius:30px;content:''}
+.wrap_mart .cont_item .item_info .thumb_g{width:30px;height:30px;border-radius:30px}
+.wrap_mart .cont_item .item_info .link_info{display:block;overflow:hidden;padding-left:9px}
+.wrap_mart .cont_item .item_info .tit_item{padding:0 5px 0 0;font-weight:normal;font-size:13px;line-height:15px;color:#222;letter-spacing:0}
+.wrap_mart .cont_item .item_info .txt_price{padding-top:1px;font-size:13px;line-height:16px;color:#666}
+.wrap_mart .cont_item .sub_info{margin:6px 3px -1px 0;border-top:1px solid #f2f2f2;font-size:13px}
+.wrap_mart .cont_item .sub_info .emph_g{display:block;padding-top:5px;color:#ff5451;letter-spacing:-0.05em}
+.wrap_mart .cont_item .tit_review{font-weight:normal;font-size:13px;line-height:20px;color:#ababab;letter-spacing:-0.02em}
+.wrap_mart .cont_item .desc_review{display:-webkit-box;overflow:hidden;max-height:57px;padding-top:5px;font-size:14px;line-height:19px;color:#333;letter-spacing:-0.04em;word-break:break-all;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+.wrap_mart .cont_item .desc_review .txt_name{font-weight:bold}
+.wrap_mart .cont_item .link_process{display:block;margin-top:10px;border:1px solid #f2f2f2;font-size:13px;line-height:34px;text-align:center}
+.wrap_mart .cont_item .link_process .txt_ing{color:#00acbd}
+.wrap_mart .cont_item .link_process .txt_stop{color:#999}
+.wrap_mart .cont_item .link_process .txt_detail{color:#222}
+
+/* C~E타입 */
+.wrap_mart .cont_item .btn_wish{position:absolute;right:3px;top:2px;width:29px;height:29px}
+.wrap_mart .cont_item .btn_wish .ico_wish{display:block;width:19px;height:16px;margin:6px auto 7px;background-position:-65px -355px}
+.wrap_mart .cont_item .on .ico_wish{background-position:-85px -360px;-webkit-animation:heart 0.4s both;animation:heart 0.4s both}
+@-webkit-keyframes heart{
+  0%{-webkit-transform:scale(1)}
+  25%{-webkit-transform:scale(0.76)}
+  75%{-webkit-transform:scale(1.05)}
+  100%{-webkit-transform:scale(1)}
+}
+@keyframes heart{
+  0%{transform:scale(1)}
+  25%{transform:scale(0.76)}
+  75%{transform:scale(1.05)}
+  100%{transform:scale(1)}
+}
+.wrap_mart .cont_item .link_item{display:block;font-size:14px;line-height:16px}
+.wrap_mart .cont_item .link_item .txt_brand{padding-top:10px;font-size:13px;color:#222;letter-spacing:-0.04em}
+.wrap_mart .cont_item .link_item .prod_info{display:block;padding-top:10px}
+.wrap_mart .cont_item .link_item .txt_brand + .prod_info{padding-top:7px}
+.wrap_mart .cont_item .link_item .txt_item{color:#222;letter-spacing:-0.03em}
+.wrap_mart .cont_item .link_item .txt_price{padding-top:3px;color:#222}
+.wrap_mart .cont_item .link_item .prev_discount{display:block;font-size:13px;line-height:16px;color:#d2d2d2;text-decoration:line-through}
+.wrap_mart .cont_item .link_item .emph_viral{padding-top:3px;color:#ff5252}
+.wrap_mart .cont_item .item_review{display:block;overflow:hidden;padding:9px 0 0 1px}
+.wrap_mart .cont_item .item_review .txt_review{float:left;font-size:13px;line-height:17px;color:#999}
+.wrap_mart .cont_item .item_review .txt_review + .txt_review{padding-left:9px}
+.wrap_mart .cont_item .txt_review .ico_review{width:12px;height:12px;margin:1px 4px 0 0;background-position:-185px -320px}
+.wrap_mart .cont_item .txt_review .ico_cmt{width:14px;height:12px;margin:2px 4px 0 0;background-position:-190px -290px}
+.wrap_mart .cont_dimmed .wrap_thumb:after{position:absolute;left:0;right:0;top:0;bottom:0;background-color:rgba(51,51,51,0.4);content:''}
+.wrap_mart .cont_item .wrap_thumb .txt_state{position:absolute;left:0;top:50%;z-index:10;width:100%;height:30px;margin-top:-15px;font-size:16px;line-height:30px;color:#fff;text-align:center}
+.wrap_mart .cont_item .thumb_type2 .link_thumb{overflow:hidden;height:auto;padding:0}
+.wrap_mart .list_product .bg_loading{display:none;overflow:hidden;margin:0 auto 8px;padding-bottom:100%;font-size:1px;line-height:0;color:transparent;background-color:#f4f4f4}
+.wrap_mart .cont_item .wrap_info{overflow:hidden;height:32px}
+.wrap_mart .cont_item .bg_logo{float:left;width:30px;height:30px;border-radius:100%;font-size:1px;line-height:0;background-color:#f4f4f4;color:transparent}
+.wrap_mart .cont_item .bg_info{display:block;position:relative;height:30px;font-size:1px;line-height:0;background-color:#f4f4f4;color:transparent}
+.wrap_mart .cont_item .bg_logo + .bg_info{margin-left:36px}
+.wrap_mart .cont_item .bg_info:after{position:absolute;top:50%;left:0;right:0;height:4px;margin-top:-2px;background-color:#fff;content:''}
+
+/* list type */
+.wrap_mart .list_vertical ul{padding:0 18px}
+.wrap_mart .list_vertical li{float:none;width:100%;padding:15px 0 0}
+.wrap_mart .list_vertical li:first-child{padding-top:0}
+.wrap_mart .list_vertical .cont_item{display:-webkit-box;display:-webkit-flex;display:flex;padding:0}
+.wrap_mart .list_vertical .cont_item .wrap_thumb{width:120px}
+.wrap_mart .list_vertical .cont_item .wrap_item{position:relative;-webkit-box-flex:1;-webkit-flex:1;flex:1}
+.wrap_mart .list_vertical .cont_item .link_item{position:absolute;left:0;top:0;width:100%;height:100%;padding:9px 0 0 20px;box-sizing:border-box}
+.wrap_mart .list_vertical .txt_rank{width:37px;padding-top:11px}
+.wrap_mart .list_vertical .txt_rank .num_rank{display:block;width:27px;font-family:'Roboto-MediumItalic',sans-serif;font-size:17px;line-height:20px;letter-spacing:-0.03em;text-align:center}
+.wrap_mart .list_vertical .fixed_bottom{position:absolute;left:20px;right:0;bottom:0}
+.wrap_mart .list_vertical .fixed_bottom .item_review{padding:0 0 9px}
+.wrap_mart .cont_item .txt_deal{display:block;padding-top:5px;font-size:13px;line-height:15px;color:#999;letter-spacing:-0.03em}
+.wrap_mart .cont_item .txt_deal .num_join{letter-spacing:0}
+.wrap_mart .cont_item .link_apply{display:block;height:34px;border:1px solid #efefef;border-radius:3px;font-size:13px;line-height:35px;letter-spacing:-0.02em;text-align:center}
+.wrap_mart .cont_item .link_apply .ico_alarm{display:none;width:14px;height:14px;margin:10px 5px 0 0;background-position:-220px -420px;vertical-align:top}
+.wrap_mart .cont_item .apply_complete{border-color:rgba(0,0,0,.02);color:#4a90e2;background-color:#f3f9ff}
+.wrap_mart .cont_item .apply_complete .ico_alarm{display:inline-block}
+.wrap_mart .cont_item .link_item .txt_item_type2{display:-webkit-box;max-height:34px;margin-bottom:3px;line-height:17px;letter-spacing:0;-webkit-box-orient:vertical;-webkit-line-clamp:2;text-overflow:clip;white-space:normal}
+.wrap_mart .cont_item .item_review_type2{padding:2px 0 4px}
+.wrap_mart .cont_item .item_review_type2 .txt_review{color:#24c08f}
+.wrap_mart .cont_item .item_review_type2 .ico_review{background-position:-330px -145px}
+.wrap_mart .cont_item .item_review_type2 .ico_cmt{background-position:-330px -160px}
+.wrap_mart .cont_item .desc_review_type2{max-height:54px;line-height:18px;color:#444}
+.wrap_mart .list_swipe{overflow:hidden}
+.wrap_mart .list_swipe_type2 ul{padding:0 15px}
+.wrap_mart .list_swipe ul{overflow-x:auto;padding-top:0;padding-bottom:40px;margin-bottom:-40px;font-size:0;white-space:nowrap;-webkit-overflow-scrolling:touch}
+.wrap_mart .list_swipe li{display:inline-block;float:none;width:41.7%;padding:0 5px 0 6px;vertical-align:top;box-sizing:border-box}
+.wrap_mart .list_swipe .cont_item{padding:0}
+.wrap_mart .cont_interest .link_thumb:before{background-color:rgba(51,51,51,.4)}
+.wrap_mart .cont_interest .wrap_thumb .txt_state{font-size:15px}
+.wrap_mart .cont_item .txt_state .ico_arrow{width:6px;height:11px;margin:9px 0 0 6px;background-position:-295px -30px;vertical-align:top}
+.wrap_mart .list_swipe_type2 li{width:40.8%;padding:0 3px}
+.wrap_mart .list_column ul{padding:0 15px}
+.wrap_mart .list_column li{width:33.333%}
+.wrap_mart .list_column li:nth-of-type(odd){clear:none}
+.wrap_mart .list_column .cont_item{padding:0 3px}
+.wrap_mart .list_column .link_item .prod_info{padding-top:12px}
+.wrap_mart .list_column .link_item .txt_price{padding-top:4px}
+
+/* 레이어 팝업 */
+/* 새로운 장보기 팝업 */
+.layer_mart{width:305px;background-color:#fff}
+.layer_mart .inner_layer, .layer_food_talkdeal .inner_layer{position:relative}
+.layer_mart .layer_head{padding:43px 30px 0}
+.layer_mart .tit_mart{display:block;overflow:hidden;width:239px;height:77px;font-size:1px;line-height:0;color:transparent;background:url(../images/m640/txt_layermart.png) no-repeat 0 0;background-size:239px 77px}
+.layer_mart .layer_body{padding:19px 25px 11px 30px}
+.layer_mart .desc_notice{padding-bottom:7px;font-size:16px;line-height:22px;color:#444;letter-spacing:-0.03em}
+.layer_mart .link_notice{font-weight:600;text-decoration:underline}
+.layer_mart .box_check{position:relative;margin-top:31px}
+.layer_mart .box_check .inp_check{position:absolute;left:0;top:0;z-index:10;width:100%;height:100%;opacity:0.01;-webkit-appearance:none;outline:none}
+.layer_mart .box_check .lab_check{display:inline-block;height:17px;padding:6px 0;font-size:14px;line-height:17px;color:#999;letter-spacing:-0.035em;vertical-align:top}
+.layer_mart .box_check .ico_check{width:17px;height:17px;margin-right:7px;background-position:-330px -105px}
+.layer_mart .box_check .inp_check:checked + .lab_check .ico_check{background-position:-330px -125px}
+.layer_mart .link_newmart{display:block;overflow:hidden;width:305px;height:58px;font-size:1px;line-height:0;color:transparent;background:url(../images/m640/btn_layermart.png) no-repeat 0 0;background-size:305px 58px}
+.layer_mart .btn_close{position:absolute;right:1px;top:4px} /* 2020-02-19 수정 */
+.layer_mart .btn_close .ico_close, .layer_food_talkdeal .btn_close .ico_close{width:16px;height:16px;margin:17px;background-position:-330px -175px} /* 2020-02-19 수정 */
+
+/* 톡딜안내 팝업 */
+.layer_food_talkdeal{width:100%;height:340px;background-color:#fff}
+.layer_food_talkdeal .mart_intro{position:relative;height:306px;padding-top:34px}
+.layer_food_talkdeal .slide_intro{overflow:hidden;position:relative}
+.layer_food_talkdeal .tit_intro{display:block;font-weight:600;font-size:20px;line-height:26px;color:#222;letter-spacing:-0.02em;text-align:center}
+.layer_food_talkdeal .tit_intro .txt_sub{display:block;font-weight:normal;font-size:16px;color:#24c08f}
+.layer_food_talkdeal .bg_talkdeal{display:block;overflow:hidden;width:251px;height:105px;margin:10px auto 25px;font-size:1px;line-height:0;color:transparent;background:url(../images/m640/bg_layermart.png) no-repeat 0 0;background-size:251px 105px}
+.layer_food_talkdeal .list_benefit{width:219px;margin:0 auto;padding:18px 0 24px;font-size:0}
+.layer_food_talkdeal .list_benefit li{display:inline-block;padding-left:25px;vertical-align:top}
+.layer_food_talkdeal .list_benefit li:first-child{padding-left:0}
+.layer_food_talkdeal .list_benefit .txt_benefit{display:block;position:relative;width:93px;height:93px;border-radius:97px;border:2px solid #57c9a5;background-color:#3fc299}
+.layer_food_talkdeal .list_benefit .inner_g{position:absolute;left:0;top:50%;width:100%;height:40px;margin-top:-20px;font-size:15px;line-height:20px;color:#fff;text-align:center}
+.layer_food_talkdeal .list_benefit .txt_info{display:block;font-size:12px;line-height:21px;color:#999;letter-spacing:-0.02em;text-align:center}
+.layer_food_talkdeal .list_process{padding-top:40px;font-size:0;text-align:center}
+.layer_food_talkdeal .list_process li{display:inline-block;position:relative;width:95px;padding-left:34px;vertical-align:top}/* 2020-10-28 수정 */
+.layer_food_talkdeal .list_process li:after{position:absolute;left:13px;top:35px;width:8px;height:14px;background:url(../images/m640/ico_arrow.png) no-repeat 0 0;background-size:8px 14px;content:''}
+.layer_food_talkdeal .list_process li:first-child{position:static;padding-left:0}
+.layer_food_talkdeal .list_process li:first-child:after{display:none}
+.layer_food_talkdeal .list_join li:first-child{width:143px}
+.layer_food_talkdeal .list_join li{padding-left:44px}
+.layer_food_talkdeal .list_join li:after{left:18px}
+.layer_food_talkdeal .list_process .ico_layermart{width:84px;height:84px}
+.layer_food_talkdeal .list_process .ico_open{background-position:0 -85px}
+.layer_food_talkdeal .list_process .ico_join{background-position:-145px 0}
+.layer_food_talkdeal .list_process .ico_success{background-position:-85px -85px}
+.layer_food_talkdeal .list_process .ico_join2{width:143px;background-position:0 0}
+.layer_food_talkdeal .list_process .txt_process{display:block;padding-top:12px;font-size:14px;line-height:18px;color:#000;letter-spacing:-0.05em;text-align:center}
+.layer_food_talkdeal .desc_intro{font-size:16px;line-height:20px;color:#222;letter-spacing:-0.04em;text-align:center}
+.layer_food_talkdeal .desc_intro .emph_intro{font-weight:600}
+.layer_food_talkdeal .desc_intro .txt_num{font-weight:bold}
+.layer_food_talkdeal .paging_intro{position:absolute;left:0;bottom:23px;width:100%;font-size:0;text-align:center}
+.layer_food_talkdeal .paging_intro .link_paging{display:inline-block;overflow:hidden;width:7px;height:7px;margin-right:7px;border-radius:7px;font-size:1px;line-height:0;color:transparent;background-color:#ddd}
+.layer_food_talkdeal .paging_intro .link_paging:last-child{margin-right:0}
+.layer_food_talkdeal .paging_intro em.link_paging{background-color:#000}
+.layer_food_talkdeal .btn_close{position:absolute;right:1px;top:4px} /* 2020-02-19 수정 */
+
+/* 2020-01-15 추가 시작 */
+/* 이전주문내역 */
+.wrap_mart .tit_order{display:block;height:43px;border-bottom:1px solid rgba(34,34,34,0.08);font-size:15px;line-height:43px;color:#222;background-color:#fff;text-align:center}
+.wrap_mart .list_history li{border-bottom:1px solid #f1f1f1}
+.wrap_mart .list_history .link_history{display:block;position:relative;height:20px;padding:17px 70px 17px 17px;font-size:16px;line-height:20px;color:#000;background-color:#fff}
+.wrap_mart .list_history .state_cancel{display:inline-block;height:18px;margin-left:7px;padding:0 6px;border:1px solid #bbb;border-radius:2px;font-size:12px;line-height:19px;color:#999;vertical-align:top;text-align:center} /* 2020-01-31 수정 */
+.os_android .wrap_mart .list_history .state_cancel{line-height:20px} /* 2020-01-31 수정 */
+.wrap_mart .list_history .ico_arr{position:absolute;right:19px;top:50%;width:15px;height:8px;margin-top:-4px;background-position:-330px -195px}
+.wrap_mart .list_history .on .ico_arr{background-position:-330px -205px}
+.wrap_mart .detail_history{display:none;padding:20px 18px 40px;border-top:1px solid #f1f1f1;background-color:#f8f8f8}
+.wrap_mart .on .detail_history{display:block}
+.wrap_mart .order_info{overflow:hidden;font-weight:bold;font-size:13px;line-height:16px;color:#222}
+.wrap_mart .order_info dt{float:left;clear:left;padding-bottom:8px}
+.wrap_mart .order_info dt:after{display:inline-block;padding:0 6px;font-weight:normal;font-size:11px;color:#ccc;vertical-align:top;content:'|'}
+.wrap_mart .order_info dd{display:block;overflow:hidden;padding-bottom:8px}
+.wrap_mart .order_info .num_order{font-weight:bold;color:#46b389}
+.wrap_mart .tit_history{display:block;padding:19px 0 11px;font-size:13px;line-height:16px;color:#000}
+/* 2020-01-31 수정 시작 */
+.wrap_mart .detail_history .wrap_tit{overflow:hidden;margin-bottom:-10px;padding-top:12px} 
+.wrap_mart .detail_history .wrap_tit .tit_history{float:left;padding:0;color:#222}
+.wrap_mart .detail_history .wrap_tit .txt_seller{float:right;font-size:13px;line-height:16px;color:#999}
+/* 2020-01-31 수정 끝 */
+.wrap_mart .tit_tbl{display:block;height:40px;margin-top:20px;padding:0 13px;border-bottom:1px solid #e1e1e1;font-size:13px;line-height:40px;color:#fff;background-color:#666}
+.wrap_mart .tbl_history, .wrap_mart .tbl_info{width:100%}
+.wrap_mart .tbl_history td, .wrap_mart .tbl_info td{position:relative;height:17px;padding:11px;font-size:13px;line-height:15px;color:#666;background-color:#fff} /* 2020-01-31 수정 */
+.wrap_mart .tbl_history td:after, .wrap_mart .tbl_info td:after{position:absolute;left:0;right:0;top:0;bottom:0;border:solid #e1e1e1;border-width:0 1px 1px 0;content:''} /* 2020-01-31 추가 */
+.wrap_mart .tbl_history td{text-align:right}
+.wrap_mart .tbl_history td:first-child{text-align:left} /* 2020-01-31 수정 */
+.wrap_mart .tbl_history td:first-child:after{border-width:0 1px 1px 1px} /* 2020-01-31 추가 */
+/* .wrap_mart .tbl_info{border-top:1px solid #e1e1e1} */ /* 2020-01-31 삭제 */
+.wrap_mart .tbl_info th{position:relative;height:17px;padding:11px 5px 11px 12px;font-weight:normal;font-size:13px;line-height:15px;color:#666;background-color:#f1f1f1;text-align:left} /* 2020-01-31 수정 */
+/* 2020-01-31 추가 시작 */
+.wrap_mart .tbl_info th:after{position:absolute;left:0;right:0;top:0;bottom:0;border:solid #e1e1e1;border-width:0 1px 1px 1px;content:''}
+.wrap_mart .tbl_info tr:first-child th:after{border-width:1px}
+.wrap_mart .tbl_info tr:first-child td:after{border-width:1px 1px 1px 0}
+/* 2020-01-31 추가 끝 */
+/* 2020-01-15 추가 끝 */
+
+@media all and (max-width:359px) {
+  /* .wrap_mart .card_talkdeal .price_delivery .txt_delivery{display:none} *//* 2020-09-10 삭제 */
+  .layer_food_talkdeal .list_process li{padding-left:19px}
+  .layer_food_talkdeal .list_process li:after{left:6px}
+  .wrap_mart .bunch_intro .link_bnr .txt_mart{margin-left:11px}
+  .wrap_mart .bunch_intro .link_bnr .img_mart{right:-22px}
+}
+/* 2020-10-26 추가 시작 */
+/* 2021-01-07_v2  삭제 시작
+@media only screen and (min-width:718px) {
+  .wrap_mart .card_special .thumb_card{height:680px;padding-bottom:0}
+}
+// // 2020-10-26 추가 끝 //
+// PC 다른(해상도 1025px 이상) //
+@media (min-width: 1025px) {
+  .wrap_mart .k_content{width:960px;margin:0 auto} // 컨텐츠 //
+  .wrap_mart .foot_commerce .inner_foot{width:928px;margin:0 auto} // 푸터 //
+}
+// 2021-01-07_v2  삭제 끝 */

@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+/* 아이콘 */
+.comm_layer .ico_layer,
+.share_comm_layer .ico_layer,
+.snack_layer .ico_layer{display:block;overflow:hidden;font-size:1px;line-height:0;color:transparent;background:url(../images/m640/ico_layer.svg) 0 0 no-repeat;background-size:180px 120px}
+
+/* 레이어 팝업 */
+.comm_layer *{font-size:14px;line-height:1.5;font-family:AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif;color:#333}
+.comm_layer{position:relative;width:300px;margin:0 auto;background:#fff;box-sizing:border-box}
+.comm_layer .layer_head{padding:26px 24px 0}
+.comm_layer .tit_layer{display:block;margin-right:22px;font-size:16px;line-height:24px;letter-spacing:-1px}
+.comm_layer .layer_body{padding:10px 24px 28px}/* 2020-11-05 수정 */
+.comm_layer .txt_sub{display:block;line-height:20px;color:#666;letter-spacing:-1px}
+.comm_layer .txt_sub + .txt_sub{padding-top:6px}
+.comm_layer .txt_sub2{color:#333}
+.comm_layer .txt_sub3{color:#999}
+.comm_layer .link_txt{display:inline-block;margin-top:10px;line-height:20px;color:#999;text-decoration:underline;vertical-align:top}
+/*.comm_layer .layer_foot{padding:0 24px 20px} 2020-11-05 제거 */
+.comm_layer .btn_layer{width:100%;height:50px;border-top:1px solid #EDEDED;font-weight:600;font-size:16px;line-height:52px;color:#000;letter-spacing:-1px}/* 2020-11-05 수정 */
+.comm_layer .btn_talk{border:0 none;background:#FFEB00}/* 2020-11-05 수정 */
+.os_android .comm_layer .btn_layer{line-height:49px}/* 2020-11-05 수정 */
+.comm_layer .ico_talk{display:inline-block;width:23px;height:16px;margin:17px 4px 0 0;background-position:-120px -90px;vertical-align:top;}/* 2020-11-05 수정 */
+.comm_layer .btn_close{position:absolute;top:0;right:0;padding:12px}
+.comm_layer .btn_close .ico_close{width:24px;height:24px;background-position:-120px -60px}
+
+/* 2020-11-13 추가 시작 */
+/* 이미지 있는 케이스 */
+.hasimg_layer .layer_head{padding-top:28px}
+.hasimg_layer .tit_layer{margin-left:22px;font-size:18px;line-height:27px;text-align:center}
+.hasimg_layer .layer_body{padding-top:16px;padding-bottom:26px}
+.hasimg_layer .txt_sub{line-height:22px}
+.hasimg_layer .img_g{vertical-align:top}
+.hasimg_layer .img_g + .txt_sub{margin-top:13px}
+/* // 2020-11-13 추가 끝 */
+
+/* 공유 레이어 */
+.share_comm_layer *{font-size:14px;line-height:1.5;font-family:AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif;color:#333}
+.share_comm_layer{position:relative;background:#fff}
+.share_comm_layer .tit_layer{display:block;padding:13px 0;font-weight:600;font-size:16px;line-height:24px;color:#000;text-align:center;letter-spacing:-1px}
+/* 2020-08-06 수정 시작 */
+.share_comm_layer .list_share_comm{display:flex;justify-content:space-between;padding:24px 40px 28px}
+.share_comm_layer .list_share_comm .link_share{display:block}
+.share_comm_layer .list_share_comm2{display:block;overflow:hidden;padding-left:30px;padding-right:30px}
+.share_comm_layer .list_share_comm2 li{float:left;width:33.33%;margin-top:20px}
+.share_comm_layer .list_share_comm2 li:nth-child(1),
+.share_comm_layer .list_share_comm2 li:nth-child(2),
+.share_comm_layer .list_share_comm2 li:nth-child(3){margin-top:0}
+.share_comm_layer .list_share_comm2 li:nth-child(3n) .link_share{margin:0 0 0 auto}
+.share_comm_layer .list_share_comm2 li:nth-child(3n + 1) .link_share{margin:0 auto 0 0}
+.share_comm_layer .list_share_comm2 .link_share{width:70px;margin:0 auto}
+.share_comm_layer .link_share .txt_share{display:block;padding-top:8px;font-size:13px;text-align:center}
+.share_comm_layer .link_share .ico_layer{width:50px;height:50px;margin:0 auto}
+.share_comm_layer .link_share .ico_kakaotalk{background-position:0 0}
+.share_comm_layer .link_share .ico_url{background-position:-60px 0}
+.share_comm_layer .link_share .ico_facebook{background-position:0 -60px}
+.share_comm_layer .link_share .ico_twitter{background-position:-60px -60px}
+.share_comm_layer .link_share .ico_rumor{background-position:-120px 0}
+/* 2020-08-06 수정 끝 */
+.share_comm_layer .btn_close{position:absolute;top:0;right:0;padding:14px}
+.share_comm_layer .btn_close .ico_close{width:24px;height:24px;background-position:-120px -60px}
+
+/* 스낵바 */
+.snack_layer *{font-size:14px;line-height:1.5;font-family:AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif;color:#333}
+.snack_layer{margin:0 10px 10px;border-radius:4px;background:#333;box-shadow:0 2px 4px rgba(0,0,0,0.3);box-sizing:border-box}/* 2020-09-14_v2 수정 *//* 2020-09-14_v4 수정 */
+.snack_layer .txt_layer{display:block;display:-webkit-box;overflow:hidden;line-height:21px;color:#FFF;max-height:42px;letter-spacing:-1px;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+.snack_layer .link_view{display:inline-block;color:#FEEB00;letter-spacing:-1px}
+.snack_layer .inner_layer{display:-webkit-box;display:-webkit-flex;display:flex;align-items:center;padding:14px 16px 13px}/* 2020-09-14_v2 수정 */
+.snack_layer .inner_layer .txt_layer{-webkit-box-flex:1;-webkit-flex:1;flex:1}
+.snack_layer .inner_layer .link_view{margin:-10px 0 -10px 22px;padding:10px 4px 10px 12px}/* 2020-09-14_v2 수정 */
+
+.layer_bottom{position:fixed;left:0;right:0;bottom:0}/* 2020-08-24 추가 */
+/* 2020-09-01 추가 시작 */
+/* alert, confirmation 레이어 */
+.layer_foot.wrap_defaultbtn{display:table;width:100%;border-top:1px solid #ededed;table-layout:fixed}/* 2020-11-05 수정 */
+.wrap_defaultbtn .area_btn{display:table-cell;text-align:center}
+.wrap_defaultbtn .area_btn + .area_btn{border-left:1px solid #ededed}
+.wrap_defaultbtn .area_btn .btn_comm{display:block;width:100%;height:50px;font-size:16px;line-height:50px;color:#333;text-align:center}
+
+.alert_comm_layer .layer_head, .confirm_comm_layer .layer_head{padding:0}
+.alert_comm_layer .layer_body{padding:26px 24px}
+.alert_comm_layer .txt_sub{color:#333}
+.confirm_comm_layer .inner_layer{padding-top:26px}
+.confirm_comm_layer .tit_layer{padding:0 24px 16px;margin-right:0}
+.confirm_comm_layer .layer_body{padding:0 24px 26px}
+/* // 2020-09-01 추가 끝 */
