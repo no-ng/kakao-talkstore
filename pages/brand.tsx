@@ -1,10 +1,11 @@
-import { ReactElement } from 'react';
-import { Layout } from '../components';
+import React, { ReactElement } from 'react';
+import { Layout, Timer } from '../components';
 
 // TODO: styled-component로 작업하기
 export default function Brand(): ReactElement {
   return (
     <Layout>
+      <Timer opener="brand" remainSeconds={205642} />
       <div>
         <div className="main_brand">
           <span className="thumb_main">

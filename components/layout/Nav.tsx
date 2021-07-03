@@ -1,12 +1,12 @@
 import Link from 'next/link';
-import React, { FunctionComponent } from 'react';
+import React, { memo, NamedExoticComponent } from 'react';
 import { _Nav } from './Layout.style';
 
 interface Props {
   disabled: boolean;
 }
 
-export const Nav: FunctionComponent<Props> = ({ disabled }) => {
+export const Nav: NamedExoticComponent<Props> = memo(({ disabled }) => {
   if (disabled) {
     return null;
   }
@@ -42,4 +42,6 @@ export const Nav: FunctionComponent<Props> = ({ disabled }) => {
       </ul>
     </_Nav>
   );
-};
+});
+
+Nav.displayName = 'Nav';
