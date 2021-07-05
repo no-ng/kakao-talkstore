@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import { _Header } from './Layout.style';
+import { _Header } from './Header.style';
 
 export const Header = () => (
   <_Header>
     <div>
-      <h1 className="screen_out">톡스토어</h1>
+      <h1>톡스토어</h1>
       <Link href="/">
         <a>
           <h2 className="logo_txt">
