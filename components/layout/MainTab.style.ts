@@ -26,7 +26,6 @@ const _MainTab = styled.div`
     a {
       height: ${headerHeight}px;
       line-height: ${headerHeight}px;
-      font-weight: 400;
       font-size: 16px;
       letter-spacing: -0.5px;
       text-align: center;
@@ -41,7 +40,7 @@ const _MainTab = styled.div`
       }
 
       &[aria-selected='true'] {
-        font-weight: 700;
+        font-weight: 500;
 
         span:after {
           left: -4px;

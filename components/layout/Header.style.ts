@@ -1,67 +1,52 @@
 import styled from 'styled-components';
-import { headerHeight, screenOut, screenSmallRight } from '../../styles/util';
 
 export const _Header = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 11000;
+  z-index: 50;
   width: 100%;
-  min-height: ${headerHeight}px;
+  height: var(--header-h);
   text-align: center;
   background-color: #fff;
+  display: flex;
+  justify-content: center;
 
-  h1 {
-    ${screenOut}
+  .wrapper {
+    width: 750px;
+    display: flex;
+    justify-content: space-between;
   }
 
-  .logo_txt {
-    display: block;
-    overflow: hidden;
-    position: relative;
-    height: ${headerHeight}px;
-    font-size: 18px;
-    text-align: center;
-    line-height: 45px;
-    font-weight: 700;
-    color: #000;
-    vertical-align: top;
-  }
-
-  .logo_img {
-    display: block;
-    width: 112px;
-    height: auto;
-    margin: 0 auto;
-    padding-top: 6px;
-  }
-
-  .menu {
-    position: absolute;
-    top: 0;
-    left: 5px;
-  }
-
-  .menu_link {
-    position: relative;
-    float: left;
-    width: ${headerHeight}px;
-    height: ${headerHeight}px;
-    text-align: center;
-  }
-
+  .menu,
   .search {
-    position: absolute;
-    top: 0;
-    right: 5px;
+    width: 3.5rem;
+    height: 3.5rem;
+
+    a {
+      display: block;
+      padding: 1rem;
+    }
   }
 
-  .search_link {
-    float: left;
-    width: ${headerHeight}px;
-    height: ${headerHeight}px;
-    text-align: center;
+  .menu,
+  .logo,
+  .search {
+    align-self: center;
   }
 
-  ${screenSmallRight}
+  .logo {
+    h2 {
+      a {
+        text-decoration: none;
+        font-weight: 700;
+        color: #000;
+      }
+
+      svg {
+        vertical-align: bottom;
+        margin-right: 0.3rem;
+      }
+    }
+  }
 `;

@@ -1,31 +1,32 @@
 import Link from 'next/link';
 import { _Header } from './Header.style';
+import { FiMenu, FiMessageSquare, FiSearch } from 'react-icons/fi';
 
 const Header = () => (
   <_Header>
-    <div>
-      <h1>톡스토어</h1>
-      <Link href="/">
-        <a>
-          <h2 className="logo_txt">
-            <img
-              className="logo_img"
-              src="https://st.kakaocdn.net/commerce_ui/front-ui/real/20210625/100049/assets/images/m640/logo_talkshopping_171207.png"
-              alt="톡쇼핑하기"
-            />
-          </h2>
+    <div className="wrapper">
+      <div className="menu">
+        <a href="#" onClick={(e) => e.preventDefault()}>
+          <FiMenu size={'1.5rem'} color={'#000'} />
         </a>
-      </Link>
-    </div>
-    <div className="menu">
-      <a href="#none" className="menu_link">
-        <span className="ico_store ico_menu">카테고리 메뉴</span>
-      </a>
-    </div>
-    <div className="search">
-      <a href="#none" className="search_link">
-        <span className="ico_store ico_search">검색</span>
-      </a>
+      </div>
+      <div className="logo">
+        <h2>
+          <Link href="/">
+            <a>
+              <FiMessageSquare size={'1.5rem'} color={'#000'} />
+              쇼핑하기
+            </a>
+          </Link>
+        </h2>
+      </div>
+      <div className="search">
+        <Link href="/search">
+          <a>
+            <FiSearch size={'1.5rem'} color={'#000'} />
+          </a>
+        </Link>
+      </div>
     </div>
   </_Header>
 );
