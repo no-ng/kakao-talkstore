@@ -1,9 +1,9 @@
 import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
 import React from 'react';
-import { _MainTab } from './MainTab.style';
+import _MainTab from './MainTab.style';
 
-export const MainTab = () => {
+const MainTab = () => {
   const { asPath } = useRouter();
 
   return (
@@ -48,3 +48,5 @@ export const MainTab = () => {
     </_MainTab>
   );
 };
+
+export default MainTab;

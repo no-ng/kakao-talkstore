@@ -1,13 +1,13 @@
 import React, { FunctionComponent } from 'react';
-import { Header } from './Header';
-import { MainTab } from './MainTab';
-import { _Layout } from './Layout.style';
+import Header from './Header';
+import MainTab from './MainTab';
+import _Layout from './Layout.style';
 
 interface Props {
   useNav?: boolean;
 }
 
-export const Layout: FunctionComponent<Props> = ({ children, useNav = true }) => (
+const Layout: FunctionComponent<Props> = ({ children, useNav = true }) => (
   <_Layout useNav={useNav}>
     <Header />
     <main>
@@ -16,3 +16,5 @@ export const Layout: FunctionComponent<Props> = ({ children, useNav = true }) =>
     </main>
   </_Layout>
 );
+
+export default Layout;

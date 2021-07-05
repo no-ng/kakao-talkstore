@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { _Header } from './Header.style';
 
-export const Header = () => (
+const Header = () => (
   <_Header>
     <div>
       <h1>톡스토어</h1>
@@ -29,3 +29,5 @@ export const Header = () => (
     </div>
   </_Header>
 );
+
+export default Header;

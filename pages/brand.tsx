@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
-import { Layout, Timer } from '../components';
+import Layout from '../components/layout/Layout';
+import Timer from '../components/timer/Timer';
 
 // TODO: styled-component로 작업하기
 export default function Brand(): ReactElement {

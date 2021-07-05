@@ -1,2 +1,10 @@
 @import url(./reset.css);
 @import url(./icon.css);
+
+dl,
+li,
+menu,
+ol,
+ul {
+  list-style: none;
+}

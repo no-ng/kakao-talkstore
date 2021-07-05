@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { headerHeight, screenSmall } from '../../styles/util';
 
-export const _MainTab = styled.div`
+const _MainTab = styled.div`
   position: absolute;
   top: ${headerHeight}px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -58,3 +58,5 @@ export const _MainTab = styled.div`
 
   ${screenSmall}
 `;
+
+export default _MainTab;

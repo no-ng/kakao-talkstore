@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { headerHeight, screenSmall } from '../../styles/util';
 
-export const _Layout = styled.div<{ useNav: boolean }>`
+const _Layout = styled.div<{ useNav: boolean }>`
   margin: 0 auto;
   height: 100%;
   width: 100%;
@@ -12,3 +12,5 @@ export const _Layout = styled.div<{ useNav: boolean }>`
 
   ${screenSmall}
 `;
+
+export default _Layout;
