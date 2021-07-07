@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { headerHeight } from '../../styles/util';
+import _Dropdown from '../Dropdown.style';
 
 const _KeywordNav = styled.div`
   top: ${headerHeight}px;
   height: 35px;
   padding-top: 15px;
   padding-bottom: 20px;
-  padding: 10px 0 8px;
   overflow: hidden;
 
   ul {
@@ -25,6 +25,32 @@ const _KeywordNav = styled.div`
       &:first-child {
         margin-left: 0;
       }
+    }
+  }
+
+  ${_Dropdown} {
+    border: 1px solid #4684e9;
+    color: #fff;
+    font-weight: 700;
+    background-color: #4684e9;
+    height: 33px;
+    border-radius: 9px;
+
+    select {
+      height: 35px;
+      padding: 0 1.5rem 0 10px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      background-color: #4684e9;
+      border-radius: 9px;
+    }
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+      top: 0.8rem;
+      right: 0.3rem;
     }
   }
 `;
