@@ -1,12 +1,21 @@
 @import url(./reset.css);
 @import url(./icon.css);
 
-.screen_out {
-  position: absolute;
-  width: 0;
-  height: 0;
-  font-size: 10px;
-  overflow: hidden;
-  line-height: 0;
-  text-indent: -9999px;
+html,
+body {
+  font-size: 80%;
+  font-family: 'Noto Sans KR';
+  font-weight: 300;
+}
+
+dl,
+li,
+menu,
+ol,
+ul {
+  list-style: none;
+}
+
+:root {
+  --header-h: 3.5rem;
 }

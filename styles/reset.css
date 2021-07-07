@@ -29,6 +29,16 @@ ul {
   padding: 0;
 }
 
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+html {
+  position: relative;
+}
+
 body,
 html {
   width: 100%;
