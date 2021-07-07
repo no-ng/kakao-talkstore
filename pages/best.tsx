@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import Layout from '../components/layout/Layout';
-import { _Best } from './best.style';
+import { _Best } from '../styles/best.style';
 
 export default function Best(): ReactElement {
   return (
