@@ -8,22 +8,43 @@ const _KeywordNav = styled.div`
   padding-top: 15px;
   padding-bottom: 20px;
   overflow: hidden;
+  font-size: 1.1rem;
 
   ul {
     padding-left: 16px;
     padding: 0 14px 40px 15px;
     overflow-x: auto;
     margin-bottom: -40px;
-    font-size: 0;
     white-space: nowrap;
+
+    font-size: 1.1rem;
 
     li {
       padding: 0 2px 0 0;
       display: inline-block;
       vertical-align: top;
+      margin-left: 2px;
 
       &:first-child {
         margin-left: 0;
+      }
+
+      a {
+        height: 33px;
+        padding: 0 10px;
+        border-color: #dee0e6;
+        border-radius: 8px;
+        display: block;
+        position: relative;
+        border: 1px solid #d3d5dd;
+        line-height: 34px;
+        color: #333;
+        text-decoration: none;
+
+        &.theme {
+          border: 1px solid #eff4fd;
+          background-color: #eff4fd;
+        }
       }
     }
   }
