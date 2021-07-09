@@ -1,7 +1,7 @@
 import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
 import React from 'react';
-import _MainTab from './MainTab.style';
+import _MainTab from './main-tab.style';
 
 const MainTab = () => {
   const { asPath } = useRouter();

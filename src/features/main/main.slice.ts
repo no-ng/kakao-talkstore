@@ -7,10 +7,9 @@ const fetchMain = createAsyncThunk('api/main', async () => {
 });
 
 export interface MainState {
-  themeKeywords?: Array<{
-    themeKeyword: string;
-    promotionId: number;
-  }>;
+  mainBanner?: {
+    firstImageUrl: string;
+  };
 }
 
 const initialState: MainState = {};
@@ -21,13 +20,13 @@ export const mainSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchMain.fulfilled, (state, action) => {
-      state.themeKeywords = action.payload.data.themeKeywords;
+      state.mainBanner = action.payload.data.mainBanner;
     });
   },
 });
 
 export { fetchMain };
 
-export const selectThemeKeywords = (state: RootState) => state.main.themeKeywords;
+export const selectMainBanner = (state: RootState) => state.main.mainBanner;
 
 export default mainSlice.reducer;

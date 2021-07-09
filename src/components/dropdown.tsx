@@ -1,5 +1,5 @@
 import { ChangeEvent, FunctionComponent } from 'react';
-import _Dropdown from './Dropdown.style';
+import _Dropdown from './dropdown.style';
 
 interface Props {
   onChange?: (e: ChangeEvent) => any;

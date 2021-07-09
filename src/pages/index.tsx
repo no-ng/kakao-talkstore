@@ -1,11 +1,11 @@
-import { ReactElement } from 'react';
-import KeywordNav from '../components/home/KeywordNav';
-import Layout from '../components/layout/Layout';
+import React, { ReactElement } from 'react';
+import Layout from '../components/layout/layout';
+import Talkdeal from '../features/talkdeal/talkdeal';
 
 export default function Home(): ReactElement {
   return (
     <Layout>
-      <KeywordNav />
+      <Talkdeal></Talkdeal>
     </Layout>
   );
 }

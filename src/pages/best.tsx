@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import Layout from '../components/layout/Layout';
+import Layout from '../components/layout/layout';
 import { _Best } from '../styles/best.style';
 
 export default function Best(): ReactElement {

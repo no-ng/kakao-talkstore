@@ -2,9 +2,9 @@ import Link from 'next/link';
 import React, { ChangeEvent } from 'react';
 import ContentLoader from 'react-content-loader';
 import { useSelector } from 'react-redux';
-import { selectThemeKeywords } from '../../features/main/mainSlice';
-import Dropdown from '../Dropdown';
-import _KeywordNav from './KeywordNav.style';
+import { selectThemeKeywords } from './talkdeal.slice';
+import Dropdown from '../../components/dropdown';
+import _KeywordNav from './keyword-nav.style';
 
 const KeywordNav = () => {
   const onChange = (e: ChangeEvent) => console.log(e);

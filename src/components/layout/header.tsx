@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { _Header } from './Header.style';
+import { _Header } from './header.style';
 import { FiMenu, FiMessageSquare, FiSearch } from 'react-icons/fi';
 
 const Header = () => (
