@@ -8,6 +8,10 @@ body {
   font-weight: 300;
 }
 
+body {
+  overscroll-behavior-y: contain;
+}
+
 dl,
 li,
 menu,
