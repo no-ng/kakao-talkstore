@@ -5,10 +5,13 @@ import { useSelector } from 'react-redux';
 import { selectThemeKeywords } from './talkdeal.slice';
 import Dropdown from '../../components/dropdown';
 import _KeywordNav from './keyword-nav.style';
+import { AnimatePresence, motion, Transition } from 'framer-motion';
 
 const KeywordNav = () => {
   const onChange = (e: ChangeEvent) => console.log(e);
   const themeKeywords = useSelector(selectThemeKeywords);
+  const leave: Transition = { ease: [0.16, 1, 0.3, 1], duration: 0.5, delay: 0.3 };
+  const enter: Transition = { ease: [0.16, 1, 0.3, 1], duration: 1, delay: 0.3 };
 
   return (
     <_KeywordNav>
@@ -29,22 +32,29 @@ const KeywordNav = () => {
             <a>전체톡딜</a>
           </Link>
         </li>
-        {themeKeywords ? (
-          themeKeywords.map(({ themeKeyword, promotionId }) => (
-            <li key={promotionId}>
-              <Link href={`/home/talkdeal/${promotionId}`}>
-                <a className="theme">{themeKeyword}</a>
-              </Link>
-            </li>
-          ))
-        ) : (
-          <li>
-            <ContentLoader uniqueKey="themeKeywords" width={200} height={35}>
-              <rect x="0" y="0" rx="8" ry="8" width="75" height="35" />
-              <rect x="79" y="0" rx="8" ry="8" width="75" height="35" />
-            </ContentLoader>
-          </li>
-        )}
+        <AnimatePresence initial={false}>
+          {themeKeywords ? (
+            themeKeywords.map(({ themeKeyword, promotionId }) => (
+              <motion.li
+                key={promotionId}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={enter}
+              >
+                <Link href={`/home/talkdeal/${promotionId}`}>
+                  <a className="theme">{themeKeyword}</a>
+                </Link>
+              </motion.li>
+            ))
+          ) : (
+            <motion.li initial={{ opacity: 1 }} exit={{ opacity: 0 }} transition={leave}>
+              <ContentLoader uniqueKey="themeKeywords" width={200} height={35}>
+                <rect x="0" y="0" rx="8" ry="8" width="80" height="35" />
+                <rect x="83" y="0" rx="8" ry="8" width="80" height="35" />
+              </ContentLoader>
+            </motion.li>
+          )}
+        </AnimatePresence>
       </ul>
     </_KeywordNav>
   );
