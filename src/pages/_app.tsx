@@ -1,4 +1,4 @@
-import { AppContext, AppProps } from 'next/app';
+import { AppProps } from 'next/app';
 import { ReactElement } from 'react';
 import { Provider } from 'react-redux';
 import { initStore } from '../app/store';
@@ -13,7 +13,7 @@ function App({ Component, pageProps }: AppProps): ReactElement {
   );
 }
 
-App.getInitialProps = async ({ ctx }: AppContext) => {
+App.getInitialProps = async () => {
   const res = await fetch(`${origin}/api/main`);
   const json = await res.json();
   const mainBanner = json?.data?.mainBanner;

@@ -1,3 +1,5 @@
+console.log(process.env.NODE_ENV);
+
 const dev = process.env.NODE_ENV === 'production';
 
 export const origin = dev
