@@ -10,8 +10,8 @@ import { AnimatePresence, motion, Transition } from 'framer-motion';
 const KeywordNav = () => {
   const onChange = (e: ChangeEvent) => console.log(e);
   const themeKeywords = useSelector(selectThemeKeywords);
-  const leave: Transition = { ease: [0.16, 1, 0.3, 1], duration: 0.5, delay: 0.3 };
-  const enter: Transition = { ease: [0.16, 1, 0.3, 1], duration: 1, delay: 0.3 };
+  const leave: Transition = { ease: [0.16, 1, 0.3, 1], duration: 0.5, delay: 0.5 };
+  const enter: Transition = { ease: [0.16, 1, 0.3, 1], duration: 0.5, delay: 1 };
 
   return (
     <_KeywordNav>

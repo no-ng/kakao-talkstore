@@ -15,8 +15,9 @@ function App({ Component, pageProps }: AppProps): ReactElement {
 }
 
 App.getInitialProps = async ({ ctx }: AppContext) => {
-  const { origin } = absoluteUrl(ctx.req);
-  const res = await fetch(`${origin}/api/main`);
+  const { protocol, host } = absoluteUrl(ctx.req);
+
+  const res = await fetch(`${protocol}//${host}/api/main`);
   const json = await res.json();
   const mainBanner = json?.data?.mainBanner;
 
