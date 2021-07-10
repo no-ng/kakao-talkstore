@@ -14,11 +14,15 @@ function App({ Component, pageProps }: AppProps): ReactElement {
 }
 
 App.getInitialProps = async () => {
-  const res = await fetch(`${origin}/api/main`);
-  const json = await res.json();
-  const mainBanner = json?.data?.mainBanner;
+  try {
+    const res = await fetch(`${origin}/api/main`);
+    const json = await res.json();
+    const mainBanner = json?.data?.mainBanner;
 
-  return { pageProps: { main: { mainBanner } } };
+    return { pageProps: { main: { mainBanner } } };
+  } catch {
+    return { pageProps: {} };
+  }
 };
 
 export default App;
