@@ -1,9 +1,9 @@
 import React, { FunctionComponent, useEffect } from 'react';
-import Header from './header';
-import MainTab from './main-tab';
-import _Layout from './layout.style';
 import { useDispatch } from 'react-redux';
 import { fetchMain } from '../../features/main/main.slice';
+import Header from './header';
+import _Layout from './layout.style';
+import MainTab from './main-tab';
 
 interface Props {
   useNav?: boolean;

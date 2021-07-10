@@ -1,9 +1,8 @@
 import { AppContext, AppProps } from 'next/app';
 import { ReactElement } from 'react';
-import { initStore } from '../app/store';
 import { Provider } from 'react-redux';
-import absoluteUrl from 'next-absolute-url';
-
+import { initStore } from '../app/store';
+import { origin } from '../config';
 import '../styles/globals.css';
 
 function App({ Component, pageProps }: AppProps): ReactElement {
@@ -15,9 +14,7 @@ function App({ Component, pageProps }: AppProps): ReactElement {
 }
 
 App.getInitialProps = async ({ ctx }: AppContext) => {
-  const { protocol, host } = absoluteUrl(ctx.req);
-
-  const res = await fetch(`${protocol}//${host}/api/main`);
+  const res = await fetch(`${origin}/api/main`);
   const json = await res.json();
   const mainBanner = json?.data?.mainBanner;
 

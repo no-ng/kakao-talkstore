@@ -2591,11 +2591,6 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
 
-next-absolute-url@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/next-absolute-url/-/next-absolute-url-1.2.2.tgz#9aba5adcee8effcffd63271d99e13213ad04c23b"
-  integrity sha512-Z2+LZXQTthhw2je9u4eq8QWXxXd57a6b54x9exBfQX4Dct6YxaMjcXZWNLHd9AOlCue84EsMpdSGP7wACqUnPg==
-
 next@10.x:
   version "10.1.3"
   resolved "https://registry.yarnpkg.com/next/-/next-10.1.3.tgz#e26e8371343a42bc2ba9be5cb253a7d324d03673"
@@ -3017,6 +3012,11 @@ prettier-linter-helpers@^1.0.0:
   integrity sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==
   dependencies:
     fast-diff "^1.1.2"
+
+prettier-plugin-organize-imports@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-organize-imports/-/prettier-plugin-organize-imports-2.2.0.tgz#dcdd5222416a90bd819734f131fea4a22b1c613a"
+  integrity sha512-2WM3moc/cAPCCsSneYhaL4+mMws0Bypbxz+98wuRyaA7GMokhOECVkQCG7l2hcH+9/4d5NsgZs9yktfwDy4r7A==
 
 prettier@^2.3.1:
   version "2.3.1"

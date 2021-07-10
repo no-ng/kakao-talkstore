@@ -1,5 +1,3 @@
-import styled from 'styled-components';
-
 export const headerHeight = 44;
 export const screenOut = `
   position: absolute;

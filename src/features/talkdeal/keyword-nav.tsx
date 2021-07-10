@@ -1,11 +1,11 @@
+import { AnimatePresence, motion, Transition } from 'framer-motion';
 import Link from 'next/link';
 import React, { ChangeEvent } from 'react';
 import ContentLoader from 'react-content-loader';
 import { useSelector } from 'react-redux';
-import { selectThemeKeywords } from './talkdeal.slice';
 import Dropdown from '../../components/dropdown';
 import _KeywordNav from './keyword-nav.style';
-import { AnimatePresence, motion, Transition } from 'framer-motion';
+import { selectThemeKeywords } from './talkdeal.slice';
 
 const KeywordNav = () => {
   const onChange = (e: ChangeEvent) => console.log(e);

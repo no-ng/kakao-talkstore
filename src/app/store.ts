@@ -1,7 +1,7 @@
 import { configureStore, StateFromReducersMapObject } from '@reduxjs/toolkit';
+import brandReducer from '../features/brand/brand.slice';
 import mainReducer from '../features/main/main.slice';
 import talkdealReducer from '../features/talkdeal/talkdeal.slice';
-import brandReducer from '../features/brand/brand.slice';
 
 const reducer = {
   main: mainReducer,

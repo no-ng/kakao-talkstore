@@ -1,9 +1,9 @@
 import { FunctionComponent, useEffect } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-import { fetchBrandTab, selectBrands, selectBrandLoaded } from './brand.slice';
 import Timer from '../../components/timer';
+import { fetchBrandTab, selectBrandLoaded, selectBrands } from './brand.slice';
 
-const BrandWrapper: FunctionComponent = () => {
+const Brand: FunctionComponent = () => {
   const dispatch = useDispatch();
   const loaded = useSelector(selectBrandLoaded);
   const brands = useSelector(selectBrands, shallowEqual);
@@ -51,4 +51,4 @@ const BrandWrapper: FunctionComponent = () => {
   );
 };
 
-export default BrandWrapper;
+export default Brand;

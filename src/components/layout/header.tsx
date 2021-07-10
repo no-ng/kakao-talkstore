@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { _Header } from './header.style';
 import { FiMenu, FiMessageSquare, FiSearch } from 'react-icons/fi';
+import { _Header } from './header.style';
 
 const Header = () => (
   <_Header>

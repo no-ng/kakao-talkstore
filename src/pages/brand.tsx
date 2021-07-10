@@ -1,11 +1,11 @@
 import React, { ReactElement } from 'react';
 import Layout from '../components/layout/layout';
-import BrandWrapper from '../features/brand/brandWrapper';
+import _Brand from '../features/brand/brand';
 
 export default function Brand(): ReactElement {
   return (
     <Layout>
-      <BrandWrapper />
+      <_Brand />
     </Layout>
   );
 }

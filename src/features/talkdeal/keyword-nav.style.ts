@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { headerHeight } from '../../styles/util';
 import _Dropdown from '../../components/dropdown.style';
+import { headerHeight } from '../../styles/util';
 
 const _KeywordNav = styled.div`
   top: ${headerHeight}px;
