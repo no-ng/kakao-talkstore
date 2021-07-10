@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const _Banner = styled.a`
   display: block;
+  aspect-ratio: 75/14;
 
   img {
     display: block;
