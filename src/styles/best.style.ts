@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const _Best = styled.div`
+export const _BestStyle = styled.div`
   padding: 29px 18px 40px;
 
   .title {
@@ -56,9 +56,8 @@ export const _Best = styled.div`
     box-sizing: border-box;
   }
   .keyword_product .thumbnail {
-    background: url('https://st.kakaocdn.net/thumb/C375x375.fjpg/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fshoppingstore%2Fproduct%2F20210408114930_bc2954b116d94a7c9fbe58f1325d6e46.jpg')
-      50% no-repeat;
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover 50% ;
     width: 124px;
     height: 124px;
     border-radius: 5px;
@@ -88,4 +87,5 @@ export const _Best = styled.div`
     text-align: center;
     font-size:14px;
   }
+
 `;
