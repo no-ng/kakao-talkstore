@@ -1,28 +1,14 @@
 import { AppProps } from 'next/app';
-import { ReactElement } from 'react';
 import { Provider } from 'react-redux';
 import { initStore } from '../app/store';
-import { origin } from '../config';
 import '../styles/globals.css';
 
-function App({ Component, pageProps }: AppProps): ReactElement {
+function App({ Component, pageProps }: AppProps) {
   return (
-    <Provider store={initStore(pageProps)}>
+    <Provider store={initStore()}>
       <Component {...pageProps} />
     </Provider>
   );
 }
-
-App.getInitialProps = async () => {
-  try {
-    const res = await fetch(`${origin}/api/main`);
-    const json = await res.json();
-    const mainBanner = json?.data?.mainBanner;
-
-    return { pageProps: { main: { mainBanner } } };
-  } catch {
-    return { pageProps: {} };
-  }
-};
 
 export default App;

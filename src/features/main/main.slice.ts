@@ -1,10 +1,5 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
-
-const fetchMain = createAsyncThunk('api/main', async () => {
-  const response = await fetch('api/main');
-  return response.json();
-});
 
 export interface MainState {
   mainBanner?: {
@@ -17,16 +12,13 @@ const initialState: MainState = {};
 export const mainSlice = createSlice({
   name: 'main',
   initialState,
-  reducers: {},
-  extraReducers: (builder) => {
-    builder.addCase(fetchMain.fulfilled, (state, action) => {
-      state.mainBanner = action.payload.data.mainBanner;
-    });
+  reducers: {
+    fetchMainDone(state, action: PayloadAction<MainState>) {
+      state.mainBanner = action.payload.mainBanner;
+    },
   },
 });
 
-export { fetchMain };
-
 export const selectMainBanner = (state: RootState) => state.main.mainBanner;
-
+export const { fetchMainDone } = mainSlice.actions;
 export default mainSlice.reducer;
