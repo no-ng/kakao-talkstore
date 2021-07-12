@@ -9,7 +9,9 @@ const Banner = () => {
     <_Banner href="#">
       <img src={banner.firstImageUrl} />
     </_Banner>
-  ) : null;
+  ) : (
+    <div />
+  );
 };
 
 export default Banner;
