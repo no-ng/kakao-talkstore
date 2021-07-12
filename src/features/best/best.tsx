@@ -36,7 +36,7 @@ const Best: FunctionComponent = () => {
       </div>
       <div className="comp_slide">
         <ul className="list_keyword_product">
-          {recommendProducts.views[0].products.map((product) => (
+          {recommendProducts.views[0]?.products.map((product) => (
             <li className="keyword_product" key={product.productId}>
               <img
                 className="thumbnail"
