@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Banner from '../main/banner';
 import KeywordNav from './keyword-nav';
+import SpecialCard from './special-card';
 import { fetchTalkdealMain } from './talkdeal.slice';
 
 const Talkdeal = () => {
@@ -15,6 +16,7 @@ const Talkdeal = () => {
     <>
       <Banner />
       <KeywordNav />
+      <SpecialCard />
     </>
   );
 };
