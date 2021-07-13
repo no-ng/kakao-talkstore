@@ -17,10 +17,16 @@ export default function Home({ main }: any) {
   );
 }
 
-export async function getServerSideProps() {
-  const res = await fetch(`${origin}/api/main`);
-  const json = await res.json();
-  const mainBanner = json?.data?.mainBanner;
+let cache: any;
 
-  return { props: { main: { mainBanner } } };
+export async function getServerSideProps() {
+  if (!cache) {
+    const res = await fetch(`${origin}/api/main`);
+    const json = await res.json();
+    const mainBanner = json?.data?.mainBanner;
+
+    cache = { main: { mainBanner } };
+  }
+
+  return { props: cache };
 }
