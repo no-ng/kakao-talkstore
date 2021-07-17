@@ -32,7 +32,7 @@ const KeywordNav = () => {
             <a>전체톡딜</a>
           </Link>
         </li>
-        <AnimatePresence initial={false}>
+        <AnimatePresence>
           {themeKeywords ? (
             themeKeywords.map(({ themeKeyword, promotionId }) => (
               <motion.li
