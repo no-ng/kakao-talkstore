@@ -1,9 +1,8 @@
-import { motion } from 'framer-motion';
 import { Duration } from 'luxon';
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
-import Timer from '../../components/timer';
 import _SpecialCard from './special-card.style';
+import TalkdealTimer from './talkdeal-timer';
 import { selectSpecialCard } from './talkdeal.slice';
 
 const SpecialCard = () => {
@@ -40,22 +39,10 @@ const SpecialCard = () => {
               </span>
             )}
             {showTimer && (
-              <motion.span
-                className={`timer ${impended && 'impended'}`}
-                animate={{
-                  y: [0, -1.5, 0, -1.5, 0],
-                }}
-                transition={{
-                  times: [0, 0.2, 0.4, 0.6, 0.8],
-                  duration: 0.5,
-                  repeat: Infinity,
-                  repeatDelay: 5,
-                  ease: 'circIn',
-                }}
-              >
-                <Timer remainSeconds={specialCard.remainSeconds} opener={'talkdeal'} />{' '}
-                남음
-              </motion.span>
+              <TalkdealTimer
+                impended={impended}
+                remainSeconds={specialCard.remainSeconds}
+              />
             )}
           </span>
           <span className="down">

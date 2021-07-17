@@ -15,6 +15,7 @@ interface Brand {
   };
   mainImageUrl: string;
   subImageUrl: string;
+  remainSeconds: number;
 }
 
 interface BrandState {
