@@ -43,10 +43,10 @@ const SpecialCard = () => {
               <motion.span
                 className={`timer ${impended && 'impended'}`}
                 animate={{
-                  y: [0, -2, 0],
+                  y: [0, -1.5, 0, -1.5, 0],
                 }}
                 transition={{
-                  times: [0, 0.8, 1],
+                  times: [0, 0.2, 0.4, 0.6, 0.8],
                   duration: 0.5,
                   repeat: Infinity,
                   repeatDelay: 5,
