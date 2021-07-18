@@ -6,7 +6,9 @@ import { fetchBestTab, RecommendView, selectRecommendCategories } from './best.s
 const Best: FunctionComponent = () => {
   const dispatch = useDispatch();
   const recommendCategories = useSelector(selectRecommendCategories);
+  const [showKeywordTooltip, setShowKeywordTooltip] = useState<boolean>(false);
   const [selectedCategory, setSelectedCategory] = useState<RecommendView>();
+  const [selectedCategoryIndex, setSelectedCategoryIndex] = useState<number>(0);
 
   useEffect(() => {
     dispatch(fetchBestTab());
@@ -16,19 +18,42 @@ const Best: FunctionComponent = () => {
     setSelectedCategory(recommendCategories[0]);
   }, [recommendCategories]);
 
+  useEffect(() => {
+    setSelectedCategory(recommendCategories[selectedCategoryIndex]);
+  }, [selectedCategoryIndex]);
+
   return (
     <_BestStyle>
       <strong className="title">
         베스트키워드
-        <span className="icon_info">안내</span>
+        <a
+          className="icon_info"
+          onClick={() => setShowKeywordTooltip(!showKeywordTooltip)}
+        >
+          &#9432;
+        </a>
+        {showKeywordTooltip && (
+          <div className="layer_tip">
+            전일 기준 톡스토어를 통한 조회수를 반영하여 매일 업데이트 됩니다.
+            <button
+              type="button"
+              className="btn_close"
+              onClick={() => {
+                setShowKeywordTooltip(false);
+              }}
+            >
+              &#x2715;
+            </button>
+          </div>
+        )}
       </strong>
       <div className="comp_slide">
         <ul className="list_tag">
-          {recommendCategories.map((category: RecommendView) => (
+          {recommendCategories.map((category: RecommendView, index: number) => (
             <li
               key={category.categoryId}
               onClick={() => {
-                setSelectedCategory(category);
+                setSelectedCategoryIndex(index);
               }}
             >
               <a
@@ -58,7 +83,18 @@ const Best: FunctionComponent = () => {
           ))}
         </ul>
       </div>
-      <div className="new_keyword">추천상품 새로보기</div>
+      <div
+        className="new_keyword"
+        onClick={() => {
+          if (selectedCategoryIndex >= recommendCategories.length - 1) {
+            setSelectedCategoryIndex(0);
+          } else {
+            setSelectedCategoryIndex(selectedCategoryIndex + 1);
+          }
+        }}
+      >
+        추천상품 새로보기
+      </div>
     </_BestStyle>
   );
 };

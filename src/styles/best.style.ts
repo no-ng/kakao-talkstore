@@ -9,7 +9,28 @@ export const _BestStyle = styled.div`
     line-height: 24px;
     color: #222;
   }
-
+  .icon_info {
+    color: #b6b6b6;
+    margin: 0 5px;
+    font-size: 18px;
+  }
+  .layer_tip {
+    max-width: 100%;
+    border: 1px solid #b6b6b6;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #666;
+    padding: 7px 15px;
+    margin 5px 0;
+    position: absolute;
+    background-color: #fff;
+  }
+  .layer_tip .btn_close {
+    float: right;
+    background-color: transparent;
+    border: none;
+  }
   .comp_slide {
     padding-bottom: 13px;
     overflow: hidden;
