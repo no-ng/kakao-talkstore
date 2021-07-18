@@ -1,7 +1,8 @@
 import { FunctionComponent, useEffect } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-import Timer from '../../components/timer';
+import BrandCard from './brand-card';
 import { fetchBrandTab, selectBrandLoaded, selectBrands } from './brand.slice';
+import { _BrandLineDiv } from './brand.style';
 
 const Brand: FunctionComponent = () => {
   const dispatch = useDispatch();
@@ -19,10 +20,8 @@ const Brand: FunctionComponent = () => {
 
   return (
     <div>
-      <Timer opener="brand" remainSeconds={205642} />
-      <div className="box_brandline">
-        <strong className="screen_out">브랜드 목록</strong>
-        <ul className="list_brand">
+      <_BrandLineDiv>
+        <ul>
           {brands.map(({ id, brandStore: { profileImage, storeName } }) => (
             <li key={id}>
               <a href="#none" className="link_brand">
@@ -34,18 +33,12 @@ const Brand: FunctionComponent = () => {
             </li>
           ))}
         </ul>
-      </div>
+      </_BrandLineDiv>
 
-      <div className="main_brand">
-        <span className="thumb_main">
-          <img
-            className="img_thumb"
-            id="thumb_87"
-            src="https://st.kakaocdn.net/shoppingstore/home/brands/20210701155059_b72f65b4a39947029db32a82e5e8e255.png"
-            alt="쿤달 KUNDAL"
-            style={{ width: '100%' }}
-          />
-        </span>
+      <div className="brand_card">
+        {brands.map(({ id, remainSeconds }) => (
+          <BrandCard key={id} remainSeconds={remainSeconds} />
+        ))}
       </div>
     </div>
   );
