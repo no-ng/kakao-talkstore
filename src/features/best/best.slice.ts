@@ -7,7 +7,7 @@ export const fetchBestTab = createAsyncThunk('api/home/tab/best/main', async () 
   return response.json();
 });
 
-interface Product {
+export interface Product {
   deliveryFeeType: 'CONDITIONAL_FREE' | 'FREE' | 'PAID' | 'QUANTITY_PAID';
   discountPrice: number;
   discountRate: number;
@@ -24,7 +24,7 @@ interface Product {
   hasAdditionalOptionPrice?: boolean;
 }
 
-interface BestState {
+export interface BestState {
   eventBanners?: {
     firstImageUrl: string;
     id: number;
@@ -33,8 +33,14 @@ interface BestState {
     productName: string;
   }[];
   recommendProducts: {
-    views: { categoryId: string; categoryName: string; products: Product[] }[];
+    views: RecommendView[];
   };
+}
+
+export interface RecommendView {
+  categoryId: string;
+  categoryName: string;
+  products: Product[];
 }
 
 const initialState: BestState = {
@@ -55,6 +61,6 @@ export const bestSlice = createSlice({
 
 export const selectRecommendProducts = ({ best }: RootState) => best.recommendProducts;
 export const selectRecommendCategories = ({ best }: RootState) =>
-  best.recommendProducts?.views.map((view) => view.categoryName);
+  best.recommendProducts?.views;
 
 export default bestSlice.reducer;

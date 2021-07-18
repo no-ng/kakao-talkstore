@@ -1,20 +1,20 @@
-import { FunctionComponent, useEffect } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { _BestStyle } from '../../styles/best.style';
-import {
-  fetchBestTab,
-  selectRecommendCategories,
-  selectRecommendProducts,
-} from './best.slice';
+import { fetchBestTab, RecommendView, selectRecommendCategories } from './best.slice';
 
 const Best: FunctionComponent = () => {
   const dispatch = useDispatch();
-  const recommendProducts = useSelector(selectRecommendProducts);
   const recommendCategories = useSelector(selectRecommendCategories);
+  const [selectedCategory, setSelectedCategory] = useState<RecommendView>();
 
   useEffect(() => {
     dispatch(fetchBestTab());
   }, []);
+
+  useEffect(() => {
+    setSelectedCategory(recommendCategories[0]);
+  }, [recommendCategories]);
 
   return (
     <_BestStyle>
@@ -24,11 +24,19 @@ const Best: FunctionComponent = () => {
       </strong>
       <div className="comp_slide">
         <ul className="list_tag">
-          {recommendCategories.map((category) => (
-            <li key={category}>
-              <a className="tag" aria-selected="true">
+          {recommendCategories.map((category: RecommendView) => (
+            <li
+              key={category.categoryId}
+              onClick={() => {
+                setSelectedCategory(category);
+              }}
+            >
+              <a
+                className="tag"
+                aria-selected={selectedCategory?.categoryId === category.categoryId}
+              >
                 <span className="tag_hash"># </span>
-                {category}
+                {category.categoryName}
               </a>
             </li>
           ))}
@@ -36,7 +44,7 @@ const Best: FunctionComponent = () => {
       </div>
       <div className="comp_slide">
         <ul className="list_keyword_product">
-          {recommendProducts.views[0]?.products.map((product) => (
+          {selectedCategory?.products?.map((product) => (
             <li className="keyword_product" key={product.productId}>
               <img
                 className="thumbnail"
