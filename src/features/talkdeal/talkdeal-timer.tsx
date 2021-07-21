@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FunctionComponent } from 'react';
-import useTimer from '../../hooks/useTimer';
+import useTimer from '../../hooks/use-timer';
 
 interface Props {
   impended: boolean;
@@ -8,8 +8,7 @@ interface Props {
 }
 
 const TalkdealTimer: FunctionComponent<Props> = ({ impended, remainSeconds }) => {
-  // [workaround] hooks 규칙상 함수 최상단에서 가져와야 해서 일단 톡딜용 타이머 만들었음
-  const { day, time } = useTimer({ remainSeconds });
+  const { day, time } = useTimer(remainSeconds);
 
   return (
     <motion.span
@@ -25,7 +24,7 @@ const TalkdealTimer: FunctionComponent<Props> = ({ impended, remainSeconds }) =>
         ease: 'circIn',
       }}
     >
-      {day ? `마감 ${day}전` : `${time} 남음`}
+      {day ? `마감 ${day}일전` : `${time} 남음`}
     </motion.span>
   );
 };

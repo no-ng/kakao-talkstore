@@ -1,12 +1,12 @@
 import { FunctionComponent } from 'react';
-import useTimer from '../../hooks/useTimer';
+import useTimer from '../../hooks/use-timer';
 
 interface Props {
   remainSeconds: number;
 }
 
 const BrandCard: FunctionComponent<Props> = ({ remainSeconds }) => {
-  const { day, time } = useTimer({ remainSeconds });
+  const { day, time } = useTimer(remainSeconds);
 
   return (
     <div className="main_brand">
