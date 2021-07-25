@@ -2,7 +2,7 @@ import { FunctionComponent, useEffect } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import BrandCard from './brand-card';
 import { fetchBrandTab, selectBrandLoaded, selectBrands } from './brand.slice';
-import { _BrandLineDiv } from './brand.style';
+import { _BrandLine } from './brand.style';
 
 const Brand: FunctionComponent = () => {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ const Brand: FunctionComponent = () => {
 
   return (
     <div>
-      <_BrandLineDiv>
+      <_BrandLine>
         <ul>
           {brands.map(({ id, brandStore: { profileImage, storeName } }) => (
             <li key={id}>
@@ -33,11 +33,11 @@ const Brand: FunctionComponent = () => {
             </li>
           ))}
         </ul>
-      </_BrandLineDiv>
+      </_BrandLine>
 
-      <div className="brand_card">
-        {brands.map(({ id, remainSeconds }) => (
-          <BrandCard key={id} remainSeconds={remainSeconds} />
+      <div className="box_brandcard">
+        {brands.map((data) => (
+          <BrandCard key={data.id} data={data} />
         ))}
       </div>
     </div>

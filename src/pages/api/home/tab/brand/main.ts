@@ -496,7 +496,8 @@ export default (_: NextApiRequest, res: NextApiResponse): void => {
             to: '20210711235958',
           },
           isLive: true,
-          mainImageUrl: '',
+          mainImageUrl:
+            'https://st.kakaocdn.net/shoppingstore/home/brands/20210723144440_e61562d939a647e0b1e2f4ea9fe189a2.png',
           subImageUrl:
             'https://st.kakaocdn.net/shoppingstore/home/brands/20210707081734_ab14b172bac44fc4ba10e2a956951979.png',
           useCopyColor: true,

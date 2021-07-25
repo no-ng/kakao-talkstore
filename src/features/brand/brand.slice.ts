@@ -6,7 +6,7 @@ const fetchBrandTab = createAsyncThunk('api/home/tab/brand/main', async () => {
   return response.json();
 });
 
-interface Brand {
+export interface Brand {
   id: number;
   brandStore: {
     id: number;
@@ -16,6 +16,7 @@ interface Brand {
   mainImageUrl: string;
   subImageUrl: string;
   remainSeconds: number;
+  copyContents: string;
 }
 
 interface BrandState {

@@ -1,26 +1,40 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useMemo } from 'react';
 import useTimer from '../../hooks/use-timer';
+import { Brand } from './brand.slice';
+import { _BrandCard } from './brand.style';
 
 interface Props {
-  remainSeconds: number;
+  data: Brand;
 }
 
-const BrandCard: FunctionComponent<Props> = ({ remainSeconds }) => {
-  const { day, time } = useTimer(remainSeconds);
+const BrandCard: FunctionComponent<Props> = ({ data }) => {
+  const { day, time } = useTimer(data.remainSeconds);
+  const {
+    copyContents,
+    mainImageUrl,
+    brandStore: { storeName },
+  } = useMemo(() => data, [data]);
 
   return (
-    <div className="main_brand">
-      <span>{day ? `${day}일 ${time}` : time} 남음</span>
-      <span className="thumb_main">
-        <img
-          className="img_thumb"
-          id="thumb_87"
-          src="https://st.kakaocdn.net/shoppingstore/home/brands/20210701155059_b72f65b4a39947029db32a82e5e8e255.png"
-          alt="쿤달 KUNDAL"
-          style={{ width: '100%' }}
-        />
-      </span>
-    </div>
+    <_BrandCard>
+      <div className="main_brand">
+        <span className="thumb_main">
+          <img
+            className="img_thumb"
+            id="thumb_87"
+            src={mainImageUrl}
+            alt={storeName}
+            style={{ width: '100%' }}
+          />
+        </span>
+        <span className="info_brand">
+          <strong className="tit_brand">
+            <pre>{copyContents}</pre>
+          </strong>
+          <span className="txt_time">{day ? `${day}일 ${time}` : time} 남음</span>
+        </span>
+      </div>
+    </_BrandCard>
   );
 };
 
