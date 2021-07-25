@@ -26,7 +26,7 @@ const Brand: FunctionComponent = () => {
             <li key={id}>
               <a href="#none" className="link_brand">
                 <span className="bg_squircle">
-                  <img className="img_thumb" src={profileImage} alt="지알앤" />
+                  <img className="img_thumb" src={profileImage} alt={storeName} />
                 </span>
                 <strong className="tit_brand">{storeName}</strong>
               </a>

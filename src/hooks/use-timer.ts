@@ -1,48 +1,42 @@
 import { Duration } from 'luxon';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
-const useTimer = (seconds: number): { day: string; time: string } => {
-  const [day, setDay] = useState('');
+const useTimer = (rs: number): { day: number; time: string } => {
+  const [day, setDay] = useState(0);
   const [time, setTime] = useState('');
-  let duration = Duration.fromObject({ seconds });
+  const [seconds, setSeconds] = useState(rs);
+  const getDays = useCallback(
+    () => Math.floor(Duration.fromObject({ seconds }).as('days')),
+    [seconds],
+  );
+  let timer: number;
 
-  const runTimer = () => {
-    useEffect(() => {
-      setTime(duration.toFormat('hh:mm:ss'));
+  useEffect(() => {
+    const days = getDays();
 
-      let timer = 0;
+    if (days >= 1) {
+      setDay(days);
+    }
 
-      const tick = () => {
-        duration = duration.minus(1000);
-        setTime(duration.toFormat('hh:mm:ss'));
-      };
+    timer = window.setInterval(() => {
+      setSeconds((sec) => sec - 1);
+    }, 1000);
 
-      timer = window.setInterval(() => tick(), 1000);
+    return () => clearInterval(timer);
+  }, []);
 
-      return () => clearInterval(timer);
-    }, []);
-  };
+  useEffect(() => {
+    if (seconds <= 1) {
+      clearInterval(timer);
+      setTime('00:00:00');
 
-  if (duration.as('days') >= 1) {
-    useEffect(() => {
-      setDay(`${Math.floor(duration.as('days'))}`);
+      return;
+    }
 
-      const untilToday = Duration.fromObject({ day: 1, minutes: 3 }).minus(duration);
+    const days = getDays();
 
-      if (untilToday.as('minutes') <= 3) {
-        let timer = 0;
-
-        timer = window.setTimeout(() => {
-          setDay('');
-          runTimer();
-        }, untilToday.as('milliseconds'));
-
-        return () => clearTimeout(timer);
-      }
-    }, []);
-  } else {
-    runTimer();
-  }
+    setTime(Duration.fromObject({ seconds }).minus({ days }).toFormat('hh:mm:ss'));
+  }, [seconds]);
 
   return { day, time };
 };

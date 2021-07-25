@@ -20,7 +20,7 @@ export default (_: NextApiRequest, res: NextApiResponse): void => {
           useCopyColor: true,
           copyColor: '#000000',
           copyContents: 'GRN과 함께하는\n체지방 집중 관리',
-          remainSeconds: 208929,
+          remainSeconds: 207425,
           landingUrl: 'https://store.kakao.com/tgrn?area=sb',
           brandStore: {
             id: 365,
@@ -502,7 +502,7 @@ export default (_: NextApiRequest, res: NextApiResponse): void => {
           useCopyColor: true,
           copyColor: '#000000',
           copyContents: '고준희의 선택\n뷰맵 안경&선글라스',
-          remainSeconds: 122529,
+          remainSeconds: 142629,
           landingUrl: 'https://store.kakao.com/viewmap?area=sbl',
           brandStore: {
             id: 367,
@@ -686,7 +686,7 @@ export default (_: NextApiRequest, res: NextApiResponse): void => {
           useCopyColor: true,
           copyColor: '#000000',
           copyContents: '믿을 수 있는 완구\n해즈브로 최대 87%',
-          remainSeconds: 36129,
+          remainSeconds: 35243,
           landingUrl: 'https://store.kakao.com/hasbrokorea?area=sb',
           brandStore: {
             id: 185,

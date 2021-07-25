@@ -10,7 +10,7 @@ const BrandCard: FunctionComponent<Props> = ({ remainSeconds }) => {
 
   return (
     <div className="main_brand">
-      <span>{day ? `${day} ${time} 남음` : time}</span>
+      <span>{day ? `${day}일 ${time}` : time} 남음</span>
       <span className="thumb_main">
         <img
           className="img_thumb"
