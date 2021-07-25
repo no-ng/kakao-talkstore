@@ -1,42 +1,47 @@
 import { Duration } from 'luxon';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const useTimer = (rs: number): { day: number; time: string } => {
-  const [day, setDay] = useState(0);
+const useTimer = (seconds: number): { day: string; time: string } => {
+  const [day, setDay] = useState('');
   const [time, setTime] = useState('');
-  const [seconds, setSeconds] = useState(rs);
-  const getDays = useCallback(
-    () => Math.floor(Duration.fromObject({ seconds }).as('days')),
-    [seconds],
-  );
-  let timer: number;
+  let duration = Duration.fromObject({ seconds });
 
-  useEffect(() => {
-    const days = getDays();
+  const startTimer = () => {
+    setTime(duration.toFormat('hh:mm:ss'));
 
-    if (days >= 1) {
-      setDay(days);
-    }
+    let timer = 0;
 
-    timer = window.setInterval(() => {
-      setSeconds((sec) => sec - 1);
-    }, 1000);
+    const tick = () => {
+      duration = duration.minus(1000);
+      setTime(duration.toFormat('hh:mm:ss'));
+    };
+
+    timer = window.setInterval(() => tick(), 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  };
 
-  useEffect(() => {
-    if (seconds <= 1) {
-      clearInterval(timer);
-      setTime('00:00:00');
+  if (duration.as('days') >= 1) {
+    const untilToday = Duration.fromObject({ day: 1, minutes: 3 }).minus(duration);
 
-      return;
+    useEffect(() => setDay(`${Math.floor(duration.as('days'))}`), []);
+
+    // 3분뒤 당일이 되면 타이머를 시작한다
+    if (untilToday.as('minutes') <= 3) {
+      let timer = 0;
+
+      useEffect(() => {
+        timer = window.setTimeout(() => {
+          setDay('');
+          startTimer();
+        }, untilToday.as('milliseconds'));
+
+        return () => clearTimeout(timer);
+      }, []);
     }
-
-    const days = getDays();
-
-    setTime(Duration.fromObject({ seconds }).minus({ days }).toFormat('hh:mm:ss'));
-  }, [seconds]);
+  } else {
+    useEffect(() => startTimer(), []);
+  }
 
   return { day, time };
 };
