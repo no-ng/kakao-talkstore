@@ -16,6 +16,7 @@ const _KeywordNav = styled.div`
     overflow-x: auto;
     margin-bottom: -40px;
     white-space: nowrap;
+    -webkit-overflow-scroling: touch;
 
     font-size: 1.1rem;
 
