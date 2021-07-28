@@ -6,14 +6,14 @@ import useHasMounted from '../../hooks/has-mounted';
 import Banner from '../main/banner';
 import KeywordNav from './keyword-nav';
 import SpecialCard from './special-card';
-import { fetchTalkdealMain, selectSpecialCard } from './talkdeal.slice';
+import { fetchTalkdeals, selectSpecialCard } from './talkdeal.slice';
 import _Talkdeal from './talkdeal.style';
 
 const Talkdeal: FunctionComponent = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchTalkdealMain());
+    dispatch(fetchTalkdeals());
   }, []);
 
   const contentLoaded = !!useSelector(selectSpecialCard);
