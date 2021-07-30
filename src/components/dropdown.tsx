@@ -2,7 +2,7 @@ import { ChangeEvent, FunctionComponent } from 'react';
 import _Dropdown from './dropdown.style';
 
 interface Props {
-  onChange?: (e: ChangeEvent) => string;
+  onChange?: (e: ChangeEvent) => any;
   chevronColor?: string;
 }
 
