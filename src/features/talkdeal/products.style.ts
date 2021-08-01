@@ -125,6 +125,9 @@ const _Products = styled.div`
         flex-grow: 1;
 
         .txt {
+          vertical-align: top;
+          display: inline-block;
+          line-height: 1.8rem;
           font-size: 1.1rem;
           color: #4684e9;
         }

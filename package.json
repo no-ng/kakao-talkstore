@@ -24,6 +24,7 @@
   "dependencies": {
     "@popperjs/core": "^2.9.2",
     "@reduxjs/toolkit": "^1.6.0",
+    "css-houdini-squircle": "^0.1.5",
     "framer-motion": "^4.1.17",
     "lodash": "^4.17.21",
     "luxon": "^2.0.1",

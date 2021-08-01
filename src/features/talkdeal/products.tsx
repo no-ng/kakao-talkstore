@@ -11,6 +11,7 @@ import {
   WindowScroller,
 } from 'react-virtualized';
 import _Products from './products.style';
+import ProfileCarousel from './profile-carousel';
 import { selectProducts } from './talkdeal.slice';
 
 const Products = () => {
@@ -26,7 +27,7 @@ const Products = () => {
   });
   const nf = new Intl.NumberFormat();
 
-  const rowRenderer: ListRowRenderer = ({ key, index, style, parent }) => {
+  const rowRenderer: ListRowRenderer = ({ key, index, style, parent, isVisible }) => {
     const product = list[index];
 
     return (
@@ -76,7 +77,10 @@ const Products = () => {
               {product.label && <span className="label">{product.label}</span>}
               <span className="dealjoin">
                 <span className="deal">
-                  <span className="txt">{product.successRoomCount}명 딜 성공중</span>
+                  <ProfileCarousel profiles={product.profiles} isVisible={isVisible} />
+                  <span className="txt">
+                    {nf.format(product.successRoomCount)}명 딜 성공중
+                  </span>
                 </span>
                 <span className="actions">
                   <button type="button">

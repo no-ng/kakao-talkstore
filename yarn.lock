@@ -2104,6 +2104,11 @@ css-color-keywords@^1.0.0:
   resolved "https://registry.yarnpkg.com/css-color-keywords/-/css-color-keywords-1.0.0.tgz#fea2616dc676b2962686b3af8dbdbe180b244e05"
   integrity sha1-/qJhbcZ2spYmhrOvjb2+GAskTgU=
 
+css-houdini-squircle@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/css-houdini-squircle/-/css-houdini-squircle-0.1.5.tgz#32cb7c60e1dc4fc4008c06ff923ef33fd7b58c74"
+  integrity sha512-NZtJzIxbPuYkheGUnvo327D7mM5H3R2NcgpcwVYAGwCI7PRSl0FwUCsxS8pWusgTb9X5ffiGbHh8rk9K1XsvyQ==
+
 css-to-react-native@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/css-to-react-native/-/css-to-react-native-3.0.0.tgz#62dbe678072a824a689bcfee011fc96e02a7d756"
