@@ -17,5 +17,9 @@ export default (req: NextApiRequest, res: NextApiResponse): void => {
     return;
   }
 
-  res.json({ list: products.slice(0, 10), hasNext: products.length > 10 });
+  res.json({
+    list: products.slice(0, 10),
+    hasNext: products.length > 10,
+    totalCount: products.length,
+  });
 };
