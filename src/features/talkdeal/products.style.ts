@@ -7,6 +7,10 @@ const _Products = styled.div`
     padding-bottom: 40px;
     position: relative;
 
+    a {
+      display: block;
+    }
+
     .thumb {
       border-radius: 8px;
       display: block;
@@ -91,12 +95,50 @@ const _Products = styled.div`
         position: static;
         margin-top: 11px;
         font-size: 1rem;
+        line-height: 2rem;
         color: #424242;
         vertical-align: top;
-
         padding: 0 7px;
         background-color: #f3f3f3;
         border-radius: 3px;
+      }
+
+      .label + .label {
+        margin-left: 4px;
+        background-color: #e2edff;
+        color: #6380b0;
+      }
+    }
+
+    .dealjoin {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      display: block;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+
+      .deal {
+        flex-grow: 1;
+
+        .txt {
+          font-size: 1.1rem;
+          color: #4684e9;
+        }
+      }
+
+      .actions {
+        flex-shrink: 0;
+        width: 80px;
+
+        button {
+          width: 40px;
+          border: none;
+          background-color: transparent;
+        }
       }
     }
   }

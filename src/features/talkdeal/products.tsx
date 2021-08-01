@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import { FiHeart, FiShare } from 'react-icons/fi';
 import { useSelector } from 'react-redux';
 import {
   AutoSizer,
@@ -36,19 +37,13 @@ const Products = () => {
         columnIndex={0}
         rowIndex={index}
       >
-        {({ measure, registerChild }) => (
-          <div className="product" style={style} ref={registerChild}>
+        {({ measure }) => (
+          <div className="product" style={style}>
             <Link href="#none">
-              <a>
-                <span className="thumb">
-                  <img
-                    src={product.imageUrl}
-                    alt={product.productName}
-                    onLoad={measure}
-                  />
-                  <span className="badge_wrapper">
-                    <span className="badge">마감 {product.remainDays}일전</span>
-                  </span>
+              <a className="thumb">
+                <img src={product.imageUrl} alt={product.productName} onLoad={measure} />
+                <span className="badge_wrapper">
+                  <span className="badge">마감 {product.remainDays}일전</span>
                 </span>
               </a>
             </Link>
@@ -79,6 +74,19 @@ const Products = () => {
                 <span className="label free_delivery">무료배송</span>
               )}
               {product.label && <span className="label">{product.label}</span>}
+              <span className="dealjoin">
+                <span className="deal">
+                  <span className="txt">{product.successRoomCount}명 딜 성공중</span>
+                </span>
+                <span className="actions">
+                  <button type="button">
+                    <FiShare size={'1.5rem'} color={'#999'} />
+                  </button>
+                  <button type="button">
+                    <FiHeart size={'1.5rem'} color={'#999'} />
+                  </button>
+                </span>
+              </span>
             </span>
           </div>
         )}
