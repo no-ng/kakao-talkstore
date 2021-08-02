@@ -1,13 +1,13 @@
 import { AnimatePresence, motion, Transition } from 'framer-motion';
 import Link from 'next/link';
-import React, { ChangeEvent } from 'react';
-import ContentLoader from 'react-content-loader';
+import React, { ChangeEvent, FunctionComponent } from 'react';
+import Skeleton from 'react-loading-skeleton';
 import { useSelector } from 'react-redux';
 import Dropdown from '../../components/dropdown';
 import _KeywordNav from './keyword-nav.style';
 import { selectThemeKeywords } from './talkdeal.slice';
 
-const KeywordNav = () => {
+const KeywordNav: FunctionComponent = () => {
   const onChange = (e: ChangeEvent) => console.log(e);
   const themeKeywords = useSelector(selectThemeKeywords);
   const leave: Transition = { ease: [0.16, 1, 0.3, 1], duration: 0.5, delay: 0.5 };
@@ -48,10 +48,18 @@ const KeywordNav = () => {
             ))
           ) : (
             <motion.li initial={{ opacity: 1 }} exit={{ opacity: 0 }} transition={leave}>
-              <ContentLoader uniqueKey="themeKeywords" width={200} height={35}>
-                <rect x="0" y="0" rx="8" ry="8" width="80" height="35" />
-                <rect x="83" y="0" rx="8" ry="8" width="80" height="35" />
-              </ContentLoader>
+              <Skeleton
+                style={{
+                  verticalAlign: 'top',
+                  width: 80,
+                  height: 35,
+                  marginRight: 3,
+                  borderRadius: 8,
+                }}
+              />
+              <Skeleton
+                style={{ verticalAlign: 'top', width: 80, height: 35, borderRadius: 8 }}
+              />
             </motion.li>
           )}
         </AnimatePresence>
