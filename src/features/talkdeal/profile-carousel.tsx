@@ -61,7 +61,7 @@ const ProfileCarousel: FunctionComponent<ProfileCarouselProps> = ({
       config: { mass: 1, tension: 280, friction: 20 },
       zIndex: 0,
     }),
-    trail: 70,
+    trail: 25,
     config: config.stiff,
     pause: !isVisible,
   });
