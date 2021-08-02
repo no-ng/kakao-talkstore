@@ -23,9 +23,7 @@ const _ProfileCarousel = styled.span`
     width: 24px;
     height: 24px;
     background-size: 24px 24px;
-    mask-image: paint(squircle);
-    --squircle-smooth: 0.4;
-    --squircle-radius: 100px;
+    clip-path: url(#squircle);
   }
 `;
 
