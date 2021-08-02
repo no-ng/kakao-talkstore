@@ -5,15 +5,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import useHasMounted from '../../hooks/has-mounted';
 import Banner from '../main/banner';
 import KeywordNav from './keyword-nav';
+import Products from './products';
 import SpecialCard from './special-card';
-import { fetchTalkdealMain, selectSpecialCard } from './talkdeal.slice';
+import { fetchTalkdeals, selectSpecialCard } from './talkdeal.slice';
 import _Talkdeal from './talkdeal.style';
 
 const Talkdeal: FunctionComponent = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchTalkdealMain());
+    dispatch(fetchTalkdeals());
   }, []);
 
   const contentLoaded = !!useSelector(selectSpecialCard);
@@ -53,6 +54,7 @@ const Talkdeal: FunctionComponent = () => {
             transition={enter}
           >
             <SpecialCard />
+            <Products />
           </motion.div>
         ) : (
           <motion.div

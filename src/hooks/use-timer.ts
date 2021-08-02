@@ -1,7 +1,7 @@
 import { Duration } from 'luxon';
 import { useEffect, useState } from 'react';
 
-const useTimer = (seconds: number): { day: string; time: string } => {
+const useTimer = (seconds: number) => {
   const [day, setDay] = useState('');
   const [time, setTime] = useState('');
 
