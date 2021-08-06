@@ -1,4 +1,5 @@
-import { FunctionComponent, useEffect } from 'react';
+import { debounce, get } from 'lodash';
+import { FunctionComponent, useEffect, useState } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import BrandCard from './brand-card';
 import { fetchBrandTab, selectBrandLoaded, selectBrands } from './brand.slice';
@@ -8,9 +9,15 @@ const Brand: FunctionComponent = () => {
   const dispatch = useDispatch();
   const loaded = useSelector(selectBrandLoaded);
   const brands = useSelector(selectBrands, shallowEqual);
+  const [selectedBrandId, setSelectedBrandId] = useState();
 
   useEffect(() => {
     dispatch(fetchBrandTab());
+
+    const handle = debounce(() => setSelectedBrandId(undefined), 100);
+    window.addEventListener('scroll', handle);
+
+    return () => window.removeEventListener('scroll', handle);
   }, []);
 
   // TODO: loading component
@@ -18,13 +25,16 @@ const Brand: FunctionComponent = () => {
     return null;
   }
 
+  const scrollToBrand = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) =>
+    setSelectedBrandId(get(e, 'currentTarget.dataset.id'));
+
   return (
     <div>
       <_BrandLine>
         <ul>
           {brands.map(({ id, brandStore: { profileImage, storeName } }) => (
             <li key={id}>
-              <a href="#none" className="link_brand">
+              <a className="link_brand" data-id={id} onClick={scrollToBrand}>
                 <span className="bg_squircle">
                   <img className="img_thumb" src={profileImage} alt={storeName} />
                 </span>
@@ -37,7 +47,7 @@ const Brand: FunctionComponent = () => {
 
       <div className="box_brandcard">
         {brands.map((data) => (
-          <BrandCard key={data.id} data={data} />
+          <BrandCard key={data.id} data={data} selectedBrandId={selectedBrandId} />
         ))}
       </div>
     </div>
