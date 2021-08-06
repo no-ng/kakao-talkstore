@@ -101,23 +101,23 @@ const Products = () => {
   return (
     <_Products>
       {list && (
-        <AutoSizer disableHeight>
-          {({ width }) => (
-            <WindowScroller>
-              {({ height }) => (
+        <WindowScroller>
+          {({ height, scrollTop }) => (
+            <AutoSizer disableHeight>
+              {({ width }) => (
                 <List
                   autoHeight
-                  width={width}
                   height={height}
-                  overscanRowCount={2}
-                  rowCount={list.length}
+                  width={width}
+                  scrollTop={scrollTop}
                   rowHeight={cache.rowHeight}
                   rowRenderer={rowRenderer}
-                ></List>
+                  rowCount={list.length}
+                />
               )}
-            </WindowScroller>
+            </AutoSizer>
           )}
-        </AutoSizer>
+        </WindowScroller>
       )}
     </_Products>
   );

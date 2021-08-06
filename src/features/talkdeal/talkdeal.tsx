@@ -27,13 +27,13 @@ const Talkdeal: FunctionComponent = () => {
     loader = (
       <>
         <div style={{ marginBottom: 20 }}>
-          <Skeleton style={{ aspectRatio: '16/9', borderRadius: 8, marginBottom: 11 }} />
+          <Skeleton style={{ paddingTop: '56.25%', borderRadius: 8, marginBottom: 11 }} />
           <Skeleton
-            style={{ width: '80%', height: 24, borderRadius: 8, marginBottom: 11 }}
+            style={{ width: '80%', height: 21, borderRadius: 8, marginBottom: 11 }}
           />
-          <Skeleton style={{ width: '60%', height: 24, borderRadius: 8 }} />
+          <Skeleton style={{ width: '60%', height: 21, borderRadius: 8 }} />
         </div>
-        <Skeleton style={{ aspectRatio: '16/9', borderRadius: 8, marginBottom: 11 }} />
+        <Skeleton style={{ paddingTop: '56.25%', borderRadius: 8, marginBottom: 11 }} />
       </>
     );
   }
