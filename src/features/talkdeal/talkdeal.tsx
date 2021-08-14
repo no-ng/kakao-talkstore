@@ -1,8 +1,7 @@
-import { AnimatePresence, motion, Transition } from 'framer-motion';
 import React, { FunctionComponent, useEffect } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import { useDispatch, useSelector } from 'react-redux';
-import useHasMounted from '../../hooks/has-mounted';
+import { animated, config, useTransition } from 'react-spring';
 import Banner from '../main/banner';
 import KeywordNav from './keyword-nav';
 import Products from './products';
@@ -19,55 +18,39 @@ const Talkdeal: FunctionComponent = () => {
 
   const contentLoaded = !!useSelector(selectSpecialCard);
 
-  let loader = <div />;
-
-  const hasMounted = useHasMounted();
-
-  if (hasMounted) {
-    loader = (
-      <>
-        <div style={{ marginBottom: 20 }}>
-          <Skeleton style={{ paddingTop: '56.25%', borderRadius: 8, marginBottom: 11 }} />
-          <Skeleton
-            style={{ width: '80%', height: 21, borderRadius: 8, marginBottom: 11 }}
-          />
-          <Skeleton style={{ width: '60%', height: 21, borderRadius: 8 }} />
-        </div>
-        <Skeleton style={{ paddingTop: '56.25%', borderRadius: 8, marginBottom: 11 }} />
-      </>
-    );
-  }
-
-  const leave: Transition = { ease: [0.16, 1, 0.3, 1], duration: 0.5, delay: 0.5 };
-  const enter: Transition = { ease: [0.16, 1, 0.3, 1], duration: 0.5, delay: 1 };
+  const transitions = useTransition(contentLoaded, {
+    enter: (done) => ({ opacity: done ? 0 : 1, delay: 500 }),
+    update: { opacity: 1, config: config.stiff },
+    leave: { opacity: 0 },
+  });
 
   return (
     <_Talkdeal>
       <Banner />
       <KeywordNav />
-      <AnimatePresence>
-        {contentLoaded ? (
-          <motion.div
-            key="talkdeal-prod-loaded"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={enter}
-          >
+      {transitions((styles, contentLoaded) =>
+        contentLoaded ? (
+          <animated.div style={styles}>
             <SpecialCard />
             <Products />
-          </motion.div>
+          </animated.div>
         ) : (
-          <motion.div
-            key="talkdeal-prod-fetching"
-            className="loader"
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={leave}
-          >
-            {loader}
-          </motion.div>
-        )}
-      </AnimatePresence>
+          <animated.div className="loader" style={styles}>
+            <Skeleton
+              style={{ paddingTop: '56.25%', borderRadius: 8, marginBottom: 11 }}
+            />
+            <Skeleton
+              style={{ width: '80%', height: 21, borderRadius: 8, marginBottom: 11 }}
+            />
+            <Skeleton
+              style={{ width: '60%', height: 21, borderRadius: 8, marginBottom: 20 }}
+            />
+            <Skeleton
+              style={{ paddingTop: '56.25%', borderRadius: 8, marginBottom: 11 }}
+            />
+          </animated.div>
+        ),
+      )}
     </_Talkdeal>
   );
 };
