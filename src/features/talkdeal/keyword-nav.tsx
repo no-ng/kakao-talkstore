@@ -1,8 +1,9 @@
-import { AnimatePresence, motion, Transition } from 'framer-motion';
+import { range } from 'lodash';
 import Link from 'next/link';
-import React, { ChangeEvent, FunctionComponent } from 'react';
+import React, { ChangeEvent, FunctionComponent, useEffect, useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import { useSelector } from 'react-redux';
+import { animated, useTransition } from 'react-spring';
 import Dropdown from '../../components/dropdown';
 import _KeywordNav from './keyword-nav.style';
 import { selectThemeKeywords } from './talkdeal.slice';
@@ -10,8 +11,25 @@ import { selectThemeKeywords } from './talkdeal.slice';
 const KeywordNav: FunctionComponent = () => {
   const onChange = (e: ChangeEvent) => console.log(e);
   const themeKeywords = useSelector(selectThemeKeywords);
-  const leave: Transition = { ease: [0.16, 1, 0.3, 1], duration: 0.5, delay: 0.5 };
-  const enter: Transition = { ease: [0.16, 1, 0.3, 1], duration: 0.5, delay: 1 };
+
+  const [list, setList] = useState<Array<Talkdeal.ThemeKeyword | Loader>>(
+    themeKeywords || range(2).map((id) => ({ id, loader: true })),
+  );
+
+  useEffect(() => {
+    setList(themeKeywords || []);
+  }, [themeKeywords]);
+
+  const transitions = useTransition(list, {
+    enter: (item, idx) =>
+      isLoader(item)
+        ? { opacity: 1, delay: 500, position: 'absolute', x: idx * 83 }
+        : { opacity: 0, delay: 500, x: -2 },
+    update: (item) => (isLoader(item) ? {} : { opacity: 1, x: 0 }),
+    leave: { opacity: 0 },
+    keys: (item) => (isLoader(item) ? item.id : item.promotionId),
+    trail: 50,
+  });
 
   return (
     <_KeywordNav>
@@ -32,40 +50,38 @@ const KeywordNav: FunctionComponent = () => {
             <a>전체톡딜</a>
           </Link>
         </li>
-        <AnimatePresence>
-          {themeKeywords ? (
-            themeKeywords.map(({ themeKeyword, promotionId }) => (
-              <motion.li
-                key={promotionId}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={enter}
-              >
-                <Link href={`/home/talkdeal/${promotionId}`}>
-                  <a className="theme">{themeKeyword}</a>
-                </Link>
-              </motion.li>
-            ))
-          ) : (
-            <motion.li initial={{ opacity: 1 }} exit={{ opacity: 0 }} transition={leave}>
+        {transitions((styles, item) =>
+          isLoader(item) ? (
+            <animated.li style={styles}>
               <Skeleton
                 style={{
                   verticalAlign: 'top',
                   width: 80,
                   height: 35,
-                  marginRight: 3,
                   borderRadius: 8,
                 }}
               />
-              <Skeleton
-                style={{ verticalAlign: 'top', width: 80, height: 35, borderRadius: 8 }}
-              />
-            </motion.li>
-          )}
-        </AnimatePresence>
+            </animated.li>
+          ) : (
+            <animated.li style={styles}>
+              <Link href={`/home/talkdeal/${item.promotionId}`}>
+                <a className="theme">{item.themeKeyword}</a>
+              </Link>
+            </animated.li>
+          ),
+        )}
       </ul>
     </_KeywordNav>
   );
 };
+
+interface Loader {
+  id: number;
+  loader: true;
+}
+
+function isLoader(o: any): o is Loader {
+  return o?.loader === true;
+}
 
 export default KeywordNav;

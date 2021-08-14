@@ -27,10 +27,7 @@ const _ProfileCarousel = styled.span`
   }
 `;
 
-const ProfileCarousel: FunctionComponent<ProfileCarouselProps> = ({
-  profiles,
-  isVisible,
-}) => {
+const ProfileCarousel: FunctionComponent<ProfileCarouselProps> = ({ profiles }) => {
   const lastIdx = profiles.length - 1;
   const [end, setEnd] = useState<number>(lastIdx);
   let range = _range(end, Math.max(-1, end - 3), -1);
@@ -61,7 +58,6 @@ const ProfileCarousel: FunctionComponent<ProfileCarouselProps> = ({
     }),
     trail: 25,
     config: config.stiff,
-    pause: !isVisible,
   });
 
   useInterval(() => {
